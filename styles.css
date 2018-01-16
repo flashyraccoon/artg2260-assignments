@@ -1,0 +1,79 @@
+body {
+  background-color: mintcream;
+  margin: 24px;
+}
+
+h1 {
+
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 48px;
+  color: black;
+  border-style: none none solid none;
+  border-color: black;
+  border-width: 3px;
+
+}
+
+h2 {
+
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 24px;
+  color: black;
+}
+
+h3 {
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 18px;
+  color: black;
+}
+
+p {
+  padding: 0 0 0 24px;
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: black;
+}
+
+a:link {
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: dimgrey;
+  text-decoration: none;
+}
+
+a:visited {
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: dimgrey;
+  text-decoration: none;
+}
+
+a:hover {
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: darkgray;
+  text-decoration: none;
+}
+
+a:active {
+  font-family: "proxima-nova", verdana, sans-serif;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  color: darkgray;
+  text-decoration: underline;
+}
