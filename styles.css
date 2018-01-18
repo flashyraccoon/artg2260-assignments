@@ -2,11 +2,13 @@
 
 body {
   background-color: mintcream;
-  margin: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 .container-fluid {
-  margin: 10px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .navbar-li {
@@ -20,23 +22,30 @@ body {
 
 .navbar-ul {
    background-color: paleturquoise;
-   padding: 10 20 10 20;
+   padding: 10 0 10 0;
    margin: 0 0 0 0;
 }
+
 h1 {
 
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 48px;
   color: darkslategray;
+  background-image: url(images/background.gif);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-size: cover;
   border-style:none;
+  padding: 150 40 40 40;
+  margin: 0;
 
 }
 
 h2 {
 
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 28px;
@@ -46,7 +55,7 @@ h2 {
 }
 
 h3 {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
@@ -58,7 +67,7 @@ p {
 
   text-align: justify;
   padding: 0 0 0 24px;
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 16px;
@@ -76,6 +85,7 @@ li {
 .centered {
   text-align: center;
 }
+
 
 a:link {
   font-family: "proxima-nova", verdana, sans-serif;
