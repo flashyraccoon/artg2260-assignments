@@ -1,66 +1,16 @@
-html, * {
-  box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
-}
-
 body {
   background-color: white;
   margin: 0px;
   padding: 0px;
 }
 
-.container-fluid {
-  margin: 0px;
-  padding: 0px;
-}
-
-.main {
-  margin-top: 210px;
-  padding-left: 20px;
-
-}
-
-.navbar-li {
-  list-style: none;
-  margin: 0px;
-  padding: 10px 20px 10px 20px;
-  text-align: center;
-  display: inline;
-}
-
-.navbar-ul {
-   background-color: #C8FBF1;
-   padding: 10px 0px 10px 0px;
-   margin: 0 0 0 0;
-}
-
 .top-container-fixed {
   position: fixed;
-  top: 0;
+  top: 0px;
   width: 100%;
-  overflow: hidden;
-}
-
-.bottom-row-fixed {
-  position: fixed;
-  bottom: 0px;
-  width: 100%; //this needs to be amended; there is a small gap on the right end of the bar, between it and the edge of the window
-  padding: 0px;
-  margin: 0px;
-}
-  .col-xs-12 {
-    padding: 0px;
-  }
-
-
-.col-xs-12 {
-  padding-right: 0px;
-  margin-right: 0px;
 }
 
 h1 {
-
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
@@ -73,6 +23,32 @@ h1 {
   border-style:none;
   padding: 150px 0px 40px 40px;
   margin: 0px;
+}
+
+.navbar-ul {
+   background-color: #C8FBF1;
+   padding: 10px 0px 10px 0px;
+   margin: 0px 0px 0px 0px;
+}
+
+.navbar-li {
+  list-style: none;
+  margin: 0px;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  display: inline;
+}
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  padding-top: 40px;
+  padding-left: 20px;
+  margin-bottom: 100px;
+}
 
 h2 {
 
@@ -81,7 +57,7 @@ h2 {
   font-weight: lighter;
   font-size: 28px;
   color: black;
-  padding: 40px 0px 30px 40px;
+  padding: 0px 0px 30px 0px;
 
 }
 
@@ -95,16 +71,13 @@ h3 {
 }
 
 p {
-
   text-align: justify;
-  padding: 0px 40px 0px 40px;
+
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 16px;
   color: black;
-  margin: 0px 0px 100px 40px;
-
 }
 
 li {
@@ -154,4 +127,12 @@ a:active {
   font-size: 16px;
   color: darkgray;
   text-decoration: underline;
+}
+
+.bottom-row-fixed {
+  position: fixed;
+  bottom: 0px;
+  width: 100%; //this needs to be amended; there is a small gap on the right end of the bar, between it and the edge of the window
+  padding: 0px;
+  margin: 0px;
 }
