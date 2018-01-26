@@ -1,14 +1,11 @@
+
 body {
   background-color: white;
   margin: 0px;
   padding: 0px;
 }
 
-.top-container-fixed {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
+
 
 h1 {
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -29,6 +26,7 @@ h1 {
    background-color: #C8FBF1;
    padding: 10px 0px 10px 0px;
    margin: 0px 0px 0px 0px;
+
 }
 
 .navbar-li {
@@ -37,6 +35,7 @@ h1 {
   padding: 10px 20px 10px 20px;
   text-align: center;
   display: inline;
+
 }
 
 .container-fluid {
@@ -45,6 +44,7 @@ h1 {
 }
 
 .main {
+  margin-top: 250px;
   padding-top: 40px;
   padding-left: 20px;
   margin-bottom: 100px;
@@ -78,6 +78,10 @@ p {
   font-weight: lighter;
   font-size: 16px;
   color: black;
+}
+
+img {
+    width: 100%;
 }
 
 li {
@@ -127,6 +131,14 @@ a:active {
   font-size: 16px;
   color: darkgray;
   text-decoration: underline;
+}
+
+.top-container-fixed {
+  position: fixed;
+  top: 0px;
+  width: 100%; //this needs to be amended; there is a small gap on the right end of the bar, between it and the edge of the window
+  padding: 0px;
+  margin: 0px;
 }
 
 .bottom-row-fixed {
