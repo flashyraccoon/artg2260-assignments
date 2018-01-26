@@ -3,44 +3,8 @@ body {
   background-color: white;
   margin: 0px;
   padding: 0px;
-}
-
-.top-container-fixed {
-  position: fixed;
-  top: 0px;
-  width: 100%; //this needs to be amended; there is a small gap on the right end of the bar, between it and the edge of the window
-  padding: 0px;
-  margin: 0px;
-}
-
-h1 {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 48px;
-  color: darkslategray;
-  background-image: url(images/background.gif);
-  background-repeat: no-repeat;
-
-  background-size: cover;
-  border-style:none;
-  padding: 150px 0px 40px 40px;
-  margin: 0px;
-}
-
-.navbar-ul {
-   background-color: #C8FBF1;
-   padding: 10px 0px 10px 0px;
-   margin: 0px 0px 0px 0px;
-
-}
-
-.navbar-li {
-  list-style: none;
-  margin: 0px;
-  padding: 10px 20px 10px 20px;
-  text-align: center;
-  display: inline;
+  overflow: auto;
+  margin-top: 0px;
 
 }
 
@@ -50,21 +14,20 @@ h1 {
 }
 
 .main {
-  margin-top: 250px;
-  padding-top: 40px;
-  padding-left: 20px;
+  margin-top: 284px;
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-bottom: 100px;
 }
 
 h2 {
-
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 28px;
   color: black;
   padding: 0px 0px 30px 0px;
-
 }
 
 h3 {
@@ -78,71 +41,134 @@ h3 {
 
 p {
   text-align: justify;
-
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
   font-size: 16px;
   color: black;
+  padding-left: 40px;
+  padding-bottom: 40px;
 }
 
 img {
     width: 100%;
+    height: auto;
+}
+
+#portrait {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+}
+
+.repeat_tile {
+  background-image: url(images/repeat_tile.gif);
+  background-repeat: repeat-x repeat-y;
+  width: auto;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 100%
+}
+
+#repeat_tile {
+  padding: 100%;
+  margin-bottom: auto;
+  overflow: hidden;
 }
 
 li {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
+  list-style-image: url(images/bullet.png);
+
 }
 
 .centered {
   text-align: center;
+  margin: auto;
 }
 
 
 a:link {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   color: dimgrey;
   text-decoration: none;
 }
 
 a:visited {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   color: dimgrey;
   text-decoration: none;
 }
 
 a:hover {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   color: darkgray;
   text-decoration: none;
 }
 
 a:active {
-  font-family: "proxima-nova", verdana, sans-serif;
+  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   color: darkgray;
   text-decoration: underline;
 }
 
+.top-row-fixed {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+h1 {
+    font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 48px;
+    color: darkslategray;
+    background-image: url(images/background_pale.gif);
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    border-style:none;
+    padding: 150px 0px 40px 40px;
+    margin: 0px;
+  }
+
+.navbar-ul {
+     background-color: #C8FBF1;
+     padding: 10px 0px 10px 0px;
+     margin: 0px;
+  }
+
+.navbar-li {
+    list-style: none;
+    margin: 0px;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    display: inline;
+  }
+
 .bottom-row-fixed {
   position: fixed;
   bottom: 0px;
-  width: 100%; //this needs to be amended; there is a small gap on the right end of the bar, between it and the edge of the window
+  width: 100%;
   padding: 0px;
   margin: 0px;
 }
