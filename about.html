@@ -62,13 +62,14 @@
     <!-- here starts the top navbar -->
     <div class="row">
       <div class="col-xs-12">
-        <ul class="navbar-ul">
-          <li class="navbar-li"> <a href="index.html">home</a></li>
-          <li class="navbar-li"> <a href="about.html">about</a></li>
-          <li class="navbar-li"> <a href="assignments.html">assignments</a></li>
-          <li class="navbar-li"> <a href="portfolio.html">portfolio</a></li>
-          <li class="navbar-li"> <a href="https://annahegyaljai.wixsite.com/annahegyaljai" target="_blank">my Wix website</a></li>
-        </ul>
+        <div class="navbar" id="myNavbar">
+          <a href="index.html" class="navbtn">home</a>
+          <a href="about.html" class="navbtn">about</a>
+          <a href="portfolio.html" class="navbtn">portfolio</a>
+          <a href="assignments.html" class="navbtn">assignments</a>
+          <a target="_blank" href="https://annahegyaljai.wixsite.com/annahegyaljai" class="navbtn">my Wix website</a>
+          <a href="javascript:void(0);" style="font-size: 400px; color: black;" class="icon" onclick="myFunction()">X</a>
+        </div>
       </div>
     </div>
     <!-- here ends the top navbar -->
@@ -79,7 +80,7 @@
   <div class="container-fluid bottom-row-fixed">
     <div class="row">
       <div class="col-xs-12">
-        <ul class="navbar-ul">
+        <ul class="dropbtn">
           <li class="navbar-li"> <a href="about.html">Back to top</a></li>
         </ul>
       </div>
@@ -87,5 +88,6 @@
   </div>
   <!-- THIS IS WHERE THE BOTTOM SECTION OF THE PAGE ENDS -->
 <!----------------------------------------------------------------------------------------------->
+
   </body>
 </html>
