@@ -1,6 +1,6 @@
 
 body {
-  background-color: white;
+  background-color: #e7fdf9;
   margin: 0px;
   padding: 0px;
   overflow: auto;
@@ -11,6 +11,7 @@ body {
 .container-fluid {
   margin: 0px;
   padding: 0px;
+  background-color: white;
 }
 
 .main {
@@ -19,6 +20,7 @@ body {
   padding-left: 40px;
   padding-right: 40px;
   margin-bottom: 100px;
+  background-color: white;
 }
 
 h2 {
@@ -37,6 +39,10 @@ h3 {
   font-size: 18px;
   color: black;
   padding: 0px 0px 0px 40px;
+}
+
+#sidepanel {
+  background-color: #e7fdf9;
 }
 
 p {
@@ -164,6 +170,11 @@ h1 {
   cursor: pointer;
 }
 
+.navbtn:hover {
+  background-color: #a0f8e5;
+  color: darkslategray;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -199,7 +210,6 @@ h1 {
 
 .dropdown:hover .dropbtn {
   background-color: #a0f8e5; //darker color of button on hover
-  color: darkslategray;
 }
 
 /* --------------------------------------------------------------------------- */
