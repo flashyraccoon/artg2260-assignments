@@ -2,7 +2,10 @@ var weight = 1;
 var clrBtnColorR = 0;
 var clrBtnColorG = 0;
 var clrBtnColorB = 0;
-var drawDottedLine = true;
+var drawDottedLine = false;
+var drawSolidLine = false;
+var drawCircles = false;
+var drawRainbow = true;
 
 
 function setup() {
@@ -38,6 +41,17 @@ function draw(){
 	noFill();
 	strokeWeight(1);
 	stroke(0);
+	rect(0, 150, 25, 75); //panel for circle-line button
+	ellipse(4, 155, 4, 4);
+	ellipse(8, 160, 6, 8);
+	ellipse(7, 165, 10, 10);
+	ellipse(8, 173, 14, 9);
+	ellipse(4, 188, 8, 20);
+	ellipse(4, 179, 20, 20);
+
+	noFill();
+	strokeWeight(1);
+	stroke(0);
 	rect(0, 475, 25, 24); //panel for clearing the canvas
 	strokeWeight(5);
 	strokeCap(ROUND);
@@ -45,7 +59,24 @@ function draw(){
 	line(5, 480, 20, 494);
 	line(20, 480, 5, 494); // red X for clearing button
 
-
+	noFill();
+	strokeWeight(1);
+	stroke(0);
+	rect(0, 450, 25, 25); // panel for saving the painting
+	fill(0);
+	beginShape();   // here begins the shape for the little save-icon
+	vertex(2, 453);
+	vertex(17, 453);
+	vertex(23, 458);
+	vertex(23, 473);
+	vertex(2, 473);
+	endShape()
+	fill(255);
+	rect(6, 455, 12, 7, 1);
+	rect(4, 463, 16, 9, 1);
+	noStroke();
+	fill(0);
+	rect(14, 456, 3, 5);
 
 	//draws the circle showing the brush size (right-hand panel)
 	ellipseMode(CENTER);
@@ -55,39 +86,63 @@ function draw(){
 
 	// draws the rect showing the brush color (right-hand panel)
 	fill (clrBtnColorR, clrBtnColorG, clrBtnColorB);
+	stroke(0);
 	rect(975, 25, 25, 500);
+	noStroke();
 
 
 	if (mouseIsPressed == true) {
 		// checking if the mouse isn't hovering over the right- or left-hand panels
-		if(((mouseX > 50) || (mouseY > 175)) && (mouseX < 950)) {
-			if (drawDottedLine == false) {
+		if((mouseX > 50) && (mouseX < 950)) {
+			if (drawSolidLine == true) {
 				strokeWeight(weight);
 			 	stroke(clrBtnColorR, clrBtnColorG, clrBtnColorB);
 			 	line(mouseX, mouseY, pmouseX, pmouseY);
 			} else if (drawDottedLine == true){
 			 	ellipse(mouseX, mouseY, weight, weight);
-		 	}
+		 	} else if (drawCircles == true) {
+				noFill();
+				strokeWeight(weight);
+				stroke(clrBtnColorR, clrBtnColorG, clrBtnColorB);
+				ellipse(mouseX, mouseY, mouseX-pmouseX, mouseY-pmouseY);
+			} else if (drawRainbow == true) {
+					strokeWeight(weight);
+					stroke(mouseX/4, mouseY/2, (mouseX+mouseY)/3);
+					line(mouseX, mouseY, pmouseX, pmouseY);
+				}
+			}
 		}
-	}
+
 }
 
 function mouseReleased() {
 	// checking if the mouse is hovering over the solid-line-button (left-hand panel)
 	if ((mouseX > 0) && (mouseX < 26) && (mouseY > 0) && (mouseY < 76)) {
 		if (drawDottedLine == true) {
-			drawDottedLine = false; }
+			drawDottedLine = false;
+		 	drawSolidLine = true;
+			drawCircles = false; }
 	// checking if the mouse is hovering over the dotted-line-button (left-hand panel)
 	} else if ((mouseX > 0 ) && (mouseX < 26) && (mouseY > 75) && (mouseY < 151)){
 			if(drawDottedLine == false) {
-				drawDottedLine = true; }
-	// checking if the mouse is hovering over the clear-all panel (left-hand panel)
+				drawDottedLine = true;
+			 	drawSolidLine = false;
+				drawCircles = false; }
+	// checking if the mouse is hovering over the draw-circles-button (left-hand panel)
+	} else if ((mouseX > 0 ) && (mouseX < 26) && (mouseY > 150) && (mouseY < 225)){
+			if(drawCircles == false) {
+				drawCircles = true;
+			 	drawSolidLine = false;
+				drawDottedLine = false; }
+	// checking if the mouse is hovering over the clear-all button (left-hand panel)
 	} else if ((mouseX > 0 ) && (mouseX < 26) && (mouseY > 475) && (mouseY < 500)){
 			stroke(255);
 			fill(255);
 			rect(0, 0, 1000, 500);
-		}
-	}
+	// checking if the mouse is hovering over the save button (left-hand panel)
+	} else if ((mouseX > 0) && (mouseX < 26) && (mouseY > 450) && (mouseY < 475)) {
+		save("myCanvas.jpg"); }
+}
 
 function keyPressed() {
 	if (key == "c" || key == "C") { //cyan
