@@ -80,7 +80,8 @@ function draw(){
 
 	//draws the circle showing the brush size (right-hand panel)
 	ellipseMode(CENTER);
-	noStroke();
+	stroke(0);
+	strokeWeight(1);
 	fill(clrBtnColorR, clrBtnColorG, clrBtnColorB);
 	ellipse(987.5, 12.5, weight, weight);
 
@@ -191,7 +192,8 @@ function keyPressed() {
 			ellipseMode(CENTER);
 			fill(255);
 			stroke(255);
-			ellipse(987.5, 12.5, weight, weight); //paints a white circle over the old, bigger brushsize
+			strokeWeight(3);
+			ellipse(987.5, 12.5, weight+weight); //paints a white circle over the old, bigger brushsize
 			weight/=2;
 			strokeWeight(weight);
 		}
