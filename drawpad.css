@@ -1,6 +1,11 @@
 body {
   background-color: lightgray;
   margin: 40px;
+  padding: 0px;
+}
+
+.container{
+  margin: 0px;
 }
 
 h1 {
