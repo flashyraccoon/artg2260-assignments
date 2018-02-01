@@ -3,9 +3,9 @@ var clrBtnColorR = 0;
 var clrBtnColorG = 0;
 var clrBtnColorB = 0;
 var drawDottedLine = false;
-var drawSolidLine = false;
+var drawSolidLine = true;
 var drawCircles = false;
-var drawRainbow = true;
+// var drawRainbow = false; used for the rainbow-function below
 
 
 function setup() {
@@ -105,14 +105,13 @@ function draw(){
 				strokeWeight(weight);
 				stroke(clrBtnColorR, clrBtnColorG, clrBtnColorB);
 				ellipse(mouseX, mouseY, mouseX-pmouseX, mouseY-pmouseY);
-			} else if (drawRainbow == true) {
+			}  /*else if (drawRainbow == true) {
 					strokeWeight(weight);
 					stroke(mouseX/4, mouseY/2, (mouseX+mouseY)/3);
 					line(mouseX, mouseY, pmouseX, pmouseY);
-				}
-			}
+				} */ //this is extra code for the rainbow-function; maybe I'll put it in later
 		}
-
+	}
 }
 
 function mouseReleased() {
