@@ -117,7 +117,7 @@ function draw(){
 function mouseReleased() {
 	// checking if the mouse is hovering over the solid-line-button (left-hand panel)
 	if ((mouseX > 0) && (mouseX < 26) && (mouseY > 0) && (mouseY < 76)) {
-		if (drawDottedLine == true) {
+		if (drawSolidLine == false) {
 			drawDottedLine = false;
 		 	drawSolidLine = true;
 			drawCircles = false; }
