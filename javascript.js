@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
-</script>
-</head>
 
-<body>
-
-<h2>JavaScript in Head</h2>
-
-<p id="demo">A Paragraph.</p>
-
-<button type="button" onclick="myFunction()">Try it</button>
-
-</body>
-</html>
+  function myFunction() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+      x.className += "responsive";
+      console.log("class is navbar");
+    } else {
+      x.className = "navbar";
+      console.log("change class to navbar");
+    }
+  }
