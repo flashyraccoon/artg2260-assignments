@@ -217,10 +217,11 @@ a:active {
   }
 
 h1 {
-    font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: 'Advent Pro', "proxima-nova", "verdana", "geneva", "Helvetica", Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: lighter;
-    font-size: 48px;
+    font-weight: normal;
+    font-size: 80px;
+    text-align: center;
     color: darkslategray;
     background-image: url(images/background_pale.gif);
     background-repeat: no-repeat;
@@ -298,6 +299,7 @@ h1 {
   border: 0px;
   padding: 0px;
   overflow: hidden;
+  box-shadow: 0 2px 15px 0;
 }
 
 .navbtn {
@@ -371,6 +373,7 @@ h1 {
   margin: 0px;
   border: 0px;
   padding: 0px;
+  box-shadow: 0 0 15px 0;
 }
 
 .bottom-navbtn {
