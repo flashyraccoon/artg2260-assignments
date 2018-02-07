@@ -13,8 +13,8 @@ body {
 }
 
 .main {
-  margin-top: 290px;
-  padding-top: 20px;
+  margin-top: 335px;
+  padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 80px;
@@ -27,10 +27,10 @@ body {
 }
 
 h2 {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 28px;
+  font-size: 42px;
   color: black;
   padding: 0px 0px 30px 0px;
 }
@@ -113,9 +113,10 @@ transition: .5s ease;
  -ms-transform: translate(-25%, -50%);
  text-align: left
   transition: .5s ease;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   background-color: none;
   color: darkslategray;
-  font-size: 24px;
+  font-size: 28px;
   margin: 0px;
   padding: 0px;
 }
@@ -172,38 +173,37 @@ li {
 
 
 a:link {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-style: normal;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 24px;
   color: slategray;
   text-decoration: none;
 }
 
 a:visited {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 24px;
   color: slategray;
   text-decoration: none;
 }
 
 a:hover {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 24px;
   color: darkslategray;
   text-decoration: none;
 
 }
 
 a:active {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: lighter;
-  font-size: 18px;
+  font-size: 24px;
   color: darkslategray;
   text-decoration: underline;
 }
@@ -235,10 +235,12 @@ h1 {
 /* ------------------------------------------------------------------------------ */
 
 .dropbtn {
+  font-size: 24px;
+  font-family: 'Advent Pro', "proxima-nova", "verdana", "geneva", "Helvetica", Helvetica, Arial, sans-serif;
   background-color: #C8FBF1; //color of the button
   color: slategray;
   padding: 10px 20px;
-  margin: 0px 10px;
+  margin: 0px 0px;
   font-size: 18px;
   width: 200px;
   border: none;
@@ -259,7 +261,7 @@ h1 {
   display: none;
   position: inherit;
   background-color: #ecf7f9; //background of the panel that drops down; lightest version of powederblue
-  max-width: 200px;
+  max-width: 150px;
   z-index: 1;
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 }
@@ -271,8 +273,9 @@ h1 {
   font-size: 18px;
   color: slategray; // the text-color of the items in the dropdown list
   text-decoration: none;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0px 10px 0px;
   display: block;
+  list-style: none;
 }
 
 .dropdown-content a:hover {
@@ -287,6 +290,12 @@ h1 {
   background-color: #a0f8e5; //darker color of button on hover
 }
 
+.dropdown:active .dropbtn {
+  background-color: #71f4d8
+  text-decoration: none;
+;
+}
+
 /* --------------------------------------------------------------------------- */
 
 .navbar {
@@ -294,12 +303,12 @@ h1 {
   display: inline-block;
   background-color: #C8FBF1;
   width: 100%;
-  height: 55px;
+  height: 64px;
   margin: 0px;
   border: 0px;
   padding: 0px;
   overflow: hidden;
-  box-shadow: 0 2px 15px 0;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2);
 }
 
 .navbtn {
@@ -308,10 +317,7 @@ h1 {
   color: slategray;
   padding: 15px 40px;
   margin: 0px;
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 18px;
+
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -373,7 +379,7 @@ h1 {
   margin: 0px;
   border: 0px;
   padding: 0px;
-  box-shadow: 0 0 15px 0;
+  box-shadow: 0 -5px 15px 0 rgba(0,0,0,0.2);
 }
 
 .bottom-navbtn {
@@ -382,10 +388,7 @@ h1 {
   color: slategray;
   padding: 15px 40px;
   margin: 0px;
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 18px;
+
   border: none;
   cursor: pointer;
   display: inline-block;
