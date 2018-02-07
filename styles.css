@@ -38,22 +38,19 @@ h2 {
 h3 {
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-size: 18px;
+  font-size: 24px;
   color: black;
   padding: 0px 0px 15px 25px;
 }
 
-#sidepanel {
-  background-color: #e7fdf9;
-}
-
 p {
-  text-align: justify;
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  text-align: left;
+  font-family: "proxima-nova", 'Abel', Verdana, Geneva, sans-serif;
+  
   font-style: normal;
   line-height: 1.5;
 
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   padding-left: 25px;
   padding-right: 25px;
@@ -63,6 +60,12 @@ p {
 video {
   margin-bottom: 30px;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}
+
 .pencilbrush-image {
     margin-bottom: 30px;
     padding: 0 7%;
@@ -76,17 +79,11 @@ video {
   margin-top: 0;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
 .image-caption {
   text-align: left;
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: italic;
-
-  font-size: 14px;
+  font-size: 16px;
   font-weight: lighter;
   color: black;
   padding-left: 40px;
@@ -104,15 +101,15 @@ img {
 }
 
 .cover-text {
-transition: .5s ease;
- opacity: 0;
- position: absolute;
- top: 50%;
- left: 25%;
- transform: translate(-25%, -50%);
- -ms-transform: translate(-25%, -50%);
- text-align: left
   transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-25%, -50%);
+  -ms-transform: translate(-25%, -50%);
+  text-align: left
+ 	transition: .5s ease;
   font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   background-color: none;
   color: darkslategray;
@@ -140,6 +137,11 @@ transition: .5s ease;
   max-width: 100%;
 }
 
+.centered {
+  text-align: center;
+  margin: auto;
+}
+
 .repeat_tile {
   background-image: url(images/repeat_tile.gif);
   background-repeat: repeat-x repeat-y;
@@ -163,14 +165,10 @@ li {
   color: black;
   list-style-image: url(images/bullet.png);
   list-style-position: inside;
-
 }
 
-.centered {
-  text-align: center;
-  margin: auto;
-}
 
+/* ------------------------------------------------------------------------------ */
 
 a:link {
   font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
@@ -260,6 +258,7 @@ h1 {
 .dropdown-content {
   display: none;
   position: inherit;
+
   background-color: #ecf7f9; //background of the panel that drops down; lightest version of powederblue
   max-width: 150px;
   z-index: 1;
