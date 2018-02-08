@@ -448,7 +448,7 @@ h1 {
   }
 }
 */
-@media (max-width: 885px) {
+@viewport (max-width: 885px) {
   html*, {
     margin: 0;
     padding: 0;
