@@ -5,6 +5,8 @@ var r;
 var g;
 var b;
 var xy;
+var weight;
+//var time = frameCount % 300;
 
 
 
@@ -12,6 +14,7 @@ function setup() {
 	var myCanvas = createCanvas( 1000, 500);
 	myCanvas.parent("canvas");
 	background(255, 255, 255);
+	frameRate(30);
 }
 
 function draw(){
@@ -19,10 +22,12 @@ function draw(){
 		r = map(mouseX, 0, 1000, 0, 255);
 		g = map(mouseY, 0, 500, 0, 255);
 		b = (r+g)/2;
+		weight = (frameCount % 150)/10;
 
 
 			for (i=0; i<10; i++) {
 				background(map(mouseX, 0, width, 0, 255));
+				strokeWeight(weight);
 				stroke(r, g, b);
 				line(random(1000), 0, mouseX, mouseY);
 				line(random(1000), 0, mouseX, mouseY);
