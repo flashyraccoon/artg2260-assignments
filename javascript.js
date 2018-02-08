@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.carousel').carousel({
       interval: 2000
     })
-  });   
+  });
 
 $(document).ready(function(){
     // Activate Carousel
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 // ---------------------------------------------------
 
-  function myFunction() {
+/*  function myFunction() {
     var x = document.getElementById("myNavbar");
     if (x.className === "navbar") {
       x.className += "responsive";
