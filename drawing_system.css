@@ -1,0 +1,30 @@
+body {
+  background-color: lightgray;
+  margin: 40px;
+  padding: 0px;
+}
+
+.container{
+  margin: 0px;
+}
+
+h1 {
+  background: none;
+  font-size: 60px;
+  color: black;
+  font-family: monospace;
+}
+#panel {
+
+  margin-top: 40px;
+  font-size: 18px;
+  font-family: monospace;
+}
+
+.button {
+  background-color: blue;
+  color: white;
+  font-size: 14px;
+  width: 100px;
+  height: 20px;
+}
