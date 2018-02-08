@@ -448,11 +448,12 @@ h1 {
   }
 }
 */
-@viewport (max-width: 885px) {
-  html*, {
+@media (max-width: 885px) {
+  html * , {
     margin: 0;
     padding: 0;
   }
+
   body {
     margin: 0;
     padding: 0;
