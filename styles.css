@@ -204,7 +204,7 @@ li {
 
  .carousel-caption p {
    font-size: 16px;
-   
+
    color: darkslategray;
    margin-left: 7%;
    padding-left: 0;
@@ -462,6 +462,7 @@ h1 {
     padding-left: 0;
     padding-right: 0;
     padding-top: 200px;
+    width: 100%;
   }
   h1 {
     font-size: 10vw;
