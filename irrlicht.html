@@ -41,7 +41,13 @@
           <div class="col-xs-12 col-sm-6">
             <h3>About the installation:</h3>
             <p>
-              bla vla
+              <i>Irrlicht</i> (German for <i>will-o'-the-wisp</i>) is an interactive installation - an experience crossing the boundaries between the real and the virtual world.<br>
+              <br>
+              Use the gamepad to explore a mysterious clearing at night; in the distance, you can see lights among the trees. As you near the source of one of the lights, you can see that it's emitted by a bottle floating in mid-air, a magical aura surrounding it.<br>
+              What secrets do this place and it's artifacts hold?<br>
+              <br>
+              Moving your avatar closer to the floating bottles in the virtual world, you will notice that, as you approach each light and it grows brighter, so does a corresponding light somewhere around you in the real world.<br>
+              Looking around you'll notice that there are bottles suspended accross the room as well, one for each that can be found in the virtual world. And each one will light up when you near its twin in the virtual clearing.
             </p>
           </div>
         </div>
@@ -49,10 +55,27 @@
           <div class="col-xs-12 col-sm-6">
             <h3>My work for the installation:</h3>
             <p>
-              blabidibla
+              When I worked on this project, I was operating largely independently. In order to execute my design idea, I enlisted help from a project mentor, who helped me programming the Arduino board I used for this project. I further was able to consult my mentor for help with writing custom scripts to be integrated in Unity 3D.<br>
+              <br>
+              I started out sketching my vision for the interactive experience. Next, I began cresting 2D assets to use in Unity 3D. I then modelled the basic terrain of the virtual world in Unity 3D. Taking inspiration from delicate paper-models, I arranged the created 2D assets in 6-pointed stars, so that the illusion of physical pbjects was created. Finally, I texturized the surfaces. While I used a rock-texture from the Unity library, I created my own for the grassy areas. I also found a matching skybox image and bottle models in the Unity Store.<br>
+              <br>
+              Putting it all together, I animated the floating bottles, and scripted events that would make the light-orb emitting from the floating bottles grow brighter as the avatar nears them, as well as cause the light to grow dimmer when the avatar walks away from them again. Additionally, I created atmospheric particle and light effects as well as a serene-looking pond within Unity.<br>
+              Finally, I created a score using GarageBand and Audacity to underline the distinct atmosphere of the virtual environment.<br>
+              <br>
+              Moving on to the real-world components, I crafted a system of wiring, Arduino board, switchboard, LEDs and green glass bottles. When it came to setting up the installation, i suspended the LED-equipped bottles from the ceiling around the room, and connected the Arduino board to the computer running the Unity App.
             </p>
           </div>
           <div class="col-xs-12 col-sm-6">
+            <img src="images\irrlicht\screenshot_02.png" style="margin-bottom: 30px;">
+
+            <img src="images\irrlicht\screenshot_04.png" style="margin-bottom: 30px;">
+
+            <img src="images\irrlicht\screenshot_05.png" style="margin-bottom: 30px;">
+
+            <img src="images\irrlicht\screenshot_06.png">
+            <p class="image-caption">
+              Screenshots of the virtual world created with Unity 3D
+            </p>
           </div>
         </div>
         <div class="row">
@@ -80,79 +103,83 @@
                 <div class="item active">
                   <img src="images\irrlicht\concept_01.png">
                   <div class="carousel-caption">
-                    <h2>concept I.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 1</h2>
+                    <p>Early concept sketch of the virtual environment</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_02.png">
                   <div class="carousel-caption">
-                    <h2>concept II.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 2</h2>
+                    <p>The virtual environment is projected onto a screen in the real space.</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_03.png">
                   <div class="carousel-caption">
-                    <h2>concept III.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 3</h2>
+                    <p>How the visitors of the installation are moving around the space and interacting with it.</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_04.png">
                   <div class="carousel-caption">
-                    <h2>concept IV.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 4</h2>
+                    <p>The light in the virtual world (A) and the light in the corresponding bottle in the real space (B) light up in sync.</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_05.png">
                   <div class="carousel-caption">
-                    <h2>concept V.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 5</h2>
+                    <p>How the data signal is transmitted from the virtual environment (A) through the specific C# script and via the Arduino board, all the way to the LED in the bottle suspended in the real space (B).</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_06.png">
                   <div class="carousel-caption">
-                    <h2>concept VI.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 6</h2>
+                    <p>Mapping out the wiring and appropriate resistances connecting the Arduino board and the LEDs.</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\concept_07.png">
                   <div class="carousel-caption">
-                    <h2>concept VII.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>concept sketch 7</h2>
+                    <p>Conceptual next stage of the project:<br>
+                       Equipping the bottles in the real space with capacitive sensors. When a visitor would approach the bottles, drawn in by them lighting up, and touch them, this would then send a signal back to the Arduino board and the Unity engine. In reaction to the visitor's interaction, an event would then be triggered in the virtual clearing. This way, there would be a back-and-forth between virtual and real, inputs and outputs.
+                    </p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\process_01.jpg">
                   <div class="carousel-caption">
-                    <h2>process I.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>process 1.</h2>
+                    <p>Getting the tools and materials ready to do some building!</p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\process_02.jpg">
                   <div class="carousel-caption">
-                    <h2>process II.</h2>
-                    <p>early concept sketch of the virtual environment</p>
+                    <h2>process 2</h2>
+                    <p>Preparing the LEDs:<br>
+                       I used a thin acrylic string to fasten small dissipators to each LED, adding cooling paste to promote heat conduction.
+                    </p>
                   </div>
                 </div>
 
                 <div class="item">
                   <img src="images\irrlicht\process_04.png">
                   <div class="carousel-caption">
-                    <h2>process III.</h2>
+                    <h2>process 3</h2>
                     <p>early concept sketch of the virtual environment</p>
                   </div>
                 </div>
@@ -160,7 +187,7 @@
                 <div class="item">
                   <img src="images\irrlicht\process_05.png">
                   <div class="carousel-caption">
-                    <h2>process IV.</h2>
+                    <h2>process 4</h2>
                     <p>early concept sketch of the virtual environment</p>
                   </div>
                 </div>
@@ -185,20 +212,7 @@
           </div>
 
         </div>
-        <div class="row" style="margin-bottom: 30px;">
-          <div class="col-xs-12 col-sm-6 portfolio-cover">
-            <img src="images\irrlicht\screenshot_02.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 portfolio-cover">
-            <img src="images\irrlicht\screenshot_04.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 portfolio-cover">
-            <img src="images\irrlicht\screenshot_05.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 portfolio-cover">
-            <img src="images\irrlicht\screenshot_06.png">
-          </div>
-        </div>
+
       </div>
 
       <!-- THIS IS WHERE THE MAIN SECTION OF THE PAGE ENDS -->
