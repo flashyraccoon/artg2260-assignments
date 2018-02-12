@@ -299,28 +299,8 @@ h1 {
   input[type=submit]:active {
       background-color: #71f4d8;
       color: darkslategray;
+      box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
   }
-  /* ----------------------------------social media icons-------------------------------------------- */
-
-  .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-  }
-
-  .fa:hover {
-      opacity: 0.7;
-  }
-
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-
-/* ------------------------------------------------------------------------------ */
 
 .dropbtn {
   font-size: 24px;
@@ -384,10 +364,41 @@ h1 {
 }
 
 .dropdown:active .dropbtn {
-  background-color: #71f4d8
+  background-color: #71f4d8;
   text-decoration: none;
-;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
 }
+
+/* ----------------------------------social media icons-------------------------------------------- */
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 68px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+  border-radius: 5px;
+  background: #C8FBF1;
+  color: white;
+  box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.2);
+}
+
+.fa:hover {
+  color: white;
+  background-color: #a0f8e5;
+}
+
+.fa:active {
+  color: white;
+  background-color: #71f4d8;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* ------------------------------------------------------------------------------ */
 
 /* --------------------------------------------------------------------------- */
 
