@@ -1,4 +1,6 @@
-* {box-sizing: border-box}
+html, * {box-sizing: border-box}
+
+
 
 body {
   background-color: #e7fdf9;
@@ -401,22 +403,7 @@ h1 {
 
 
 /* ------------------------------------------------------------------------------ */
-.bordered {
 
-  height: 100%;
-  display: table; /* Make the container element behave like a table */
-  width: 100%; /* Set full-width to expand the whole page */
-}
-
-.bordered-card {
-  display: table-cell;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
-  margin: 0px, 15px, 0px, 15px;
-  padding: 15px;
-  margin-bottom: -99999px;
-padding-bottom: 99999px;
-}
 /* --------------------------------------------------------------------------- */
 
 .navbar {
@@ -553,10 +540,20 @@ padding-bottom: 99999px;
     margin: 0;
     text-align: center;
   }
+
+  h2 {
+    padding-left: 30px;
+  }
+
   h3 {
     padding-top: 0;
     margin-top: 0;
   }
+
+  p {
+    padding-left: 45px;
+  }
+
   div {
     margin: 0;
     padding: 0;
