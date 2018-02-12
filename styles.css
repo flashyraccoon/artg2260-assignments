@@ -159,6 +159,8 @@ img {
   overflow: hidden;
 }
 
+
+
 li {
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -399,7 +401,22 @@ h1 {
 
 
 /* ------------------------------------------------------------------------------ */
+.bordered {
 
+  height: 100%;
+  display: table; /* Make the container element behave like a table */
+  width: 100%; /* Set full-width to expand the whole page */
+}
+
+.bordered-card {
+  display: table-cell;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
+  margin: 0px, 15px, 0px, 15px;
+  padding: 15px;
+  margin-bottom: -99999px;
+padding-bottom: 99999px;
+}
 /* --------------------------------------------------------------------------- */
 
 .navbar {
