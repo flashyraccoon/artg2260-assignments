@@ -64,6 +64,12 @@ p {
 video {
   margin-bottom: 30px;
 }
+ iframe {
+   padding-left: 15px;
+   padding-right: 15px;
+   margin-bottom: 30px;
+ }
+
 
 img {
     width: 100%;
@@ -127,7 +133,7 @@ img {
 }
 
 .portfolio-cover:hover img {
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .portfolio-cover:hover .cover-text {
@@ -595,6 +601,11 @@ h1 {
   .centered {
     margin: 0;
     padding: 0;
+  }
+
+  .float-container {
+    float: left;
+    width: 100%;
   }
 
   img {
