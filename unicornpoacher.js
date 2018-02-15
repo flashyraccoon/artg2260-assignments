@@ -87,6 +87,8 @@ class Poacher {
     this.x = width/2;
     this.y = height/2;
     this.diameter = 20;
+    this.regX = this.x;
+    this.regY = this.y;
 
 
   }
@@ -106,13 +108,18 @@ class Poacher {
 
       if(keyIsDown(87)) {
           poacher.y-=2;
+          poacher.regX-=2;
       } if (keyIsDown(83)) {
           poacher.y+=2;
+          poacher.regY+=2;
       } if(keyIsDown(65)){
           poacher.x-=2;
+          poacher.regX+=2;
       } if(keyIsDown(68)) {
           poacher.x+=2;
+          poacher.regX+=2;
       }
+      //rotate(PI / angle);
     }
 
 }
