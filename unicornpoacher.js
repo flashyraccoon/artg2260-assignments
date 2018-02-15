@@ -41,8 +41,8 @@ function update() {
   score++;
   text("playing", 10, 30);
   text("score: " + score, 400, 30);
-  //angle = Math.atan2(mouseY - poacher.y, mouseX - poacher.x );
-  //angle = angle * (180/Math.PI);
+  angle = Math.atan2(mouseY - poacher.y, mouseX - poacher.x );
+  angle = angle * (180/Math.PI);
   //print("the angle is " + angle);
 }
 
@@ -94,7 +94,7 @@ class Poacher {
   display(){
     poacher.regX = poacher.x;
     poacher.regY = poacher.y;
-    //rotate(PI / angle);
+    rotate(PI / angle);
     beginShape();
     ellipse(this.x, this.y, this.diameter, this.diameter);
     line(this.x+this.diameter/2, this.y, this.x+this.diameter*2, this.y);
