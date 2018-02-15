@@ -22,16 +22,16 @@ class Box {
     }
 
 
-	display () {
+	function display () {
       fill(this.color);
       rect((width/2), this.y, 20, 20);
     }
 
-  	move() {
+  function move() {
     	this.y -=1;
   	}
 
-  	teleport() {
+  function teleport() {
     	if(this.y == 0) {
       		this.y = height;
       		this.color = (random(255), random(255), random(255));
