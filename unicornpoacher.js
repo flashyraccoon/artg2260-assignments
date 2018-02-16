@@ -3,10 +3,7 @@ let score = 0;
 let poacher;
 let width = 500;
 let height = 500;
-let angle;
-let bullet;
-
-
+let a;
 
 
 function setup(){
@@ -26,10 +23,17 @@ function draw(){
   }
   poacher.display();
   poacher.move();
-
   }
 
-
+function mouseClicked(){
+   if (gameState == 0){
+     gameState = 1;
+   } else if (gameState == 2){
+     gameState = 0;
+   } else if (gameState == 1){
+     poacher.shoot();
+   }
+  }
 
 function startScreen() {
   background(255);
@@ -41,9 +45,6 @@ function update() {
   score++;
   text("playing", 10, 30);
   text("score: " + score, 400, 30);
-  angle = Math.atan2(mouseY - poacher.y, mouseX - poacher.x );
-  angle = angle * (180/Math.PI);
-  //print("the angle is " + angle);
 }
 
 function gameOver(){
@@ -54,17 +55,51 @@ function gameOver(){
   }
 }
 
-function mouseClicked(){
- if (gameState == 0){
-   gameState = 1;
- } else if (gameState == 2){
-   gameState = 0;
- } else if (gameState == 1){
-   let bullet = new Bullet();
-   bullet.display();
-   bullet.move();
- }
-}
+
+class Poacher {
+
+  constructor(){
+    this.x = width/2;
+    this.y = height/2;
+    this.diameter = 20;
+    this.regX = this.x;
+    this.regY = this.y;
+  }
+
+  display(){
+
+    a = Math.atan2(mouseY - this.y, mouseX - this.x);
+    translate(this.x, this.y);
+    rotate(a);
+    beginShape();
+    ellipse(0, 0, this.diameter, this.diameter);
+    line(0, 0, this.diameter, 0);
+    endShape();
+  }
+
+  move(){
+      if(keyIsDown(87)) {
+          poacher.y-=3;
+          poacher.regX-=3;
+      } if (keyIsDown(83)) {
+          poacher.y+=3;
+          poacher.regY+=3;
+      } if(keyIsDown(65)){
+          poacher.x-=3;
+          poacher.regX+=3;
+      } if(keyIsDown(68)) {
+          poacher.x+=3;
+          poacher.regX+=3;
+      }
+    }
+
+    shoot(){
+      let bullet = new Bullet();
+      bullet.display();
+      bullet.move();
+    }
+
+  }
 
 class Bullet {
   constructor(){
@@ -80,46 +115,4 @@ class Bullet {
   move(){
     this.x += 3;
   }
-}
-
-class Poacher {
-  constructor(){
-    this.x = width/2;
-    this.y = height/2;
-    this.diameter = 20;
-    this.regX = this.x;
-    this.regY = this.y;
-
-
-  }
-
-  display(){
-    poacher.regX = poacher.x;
-    poacher.regY = poacher.y;
-    rotate(PI / angle);
-    beginShape();
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-    line(this.x+this.diameter/2, this.y, this.x+this.diameter*2, this.y);
-    endShape();
-
-  }
-
-  move(){
-
-      if(keyIsDown(87)) {
-          poacher.y-=2;
-          poacher.regX-=2;
-      } if (keyIsDown(83)) {
-          poacher.y+=2;
-          poacher.regY+=2;
-      } if(keyIsDown(65)){
-          poacher.x-=2;
-          poacher.regX+=2;
-      } if(keyIsDown(68)) {
-          poacher.x+=2;
-          poacher.regX+=2;
-      }
-      //rotate(PI / angle);
-    }
-
 }
