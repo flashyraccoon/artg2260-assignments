@@ -4,6 +4,7 @@ let poacher;
 let width = 500;
 let height = 500;
 let a;
+let bullets = [];
 
 
 function setup(){
@@ -23,7 +24,12 @@ function draw(){
   }
   poacher.display();
   poacher.move();
+  for (b of bullets) {
+    b.move();
+    b.display();
+    print("bullet comes!");
   }
+}
 
 function mouseClicked(){
    if (gameState == 0){
@@ -64,13 +70,14 @@ class Poacher {
     this.diameter = 20;
     this.regX = this.x;
     this.regY = this.y;
+    this.a = 0;
   }
 
   display(){
-
-    a = Math.atan2(mouseY - this.y, mouseX - this.x);
+ // put a conditional for a -> only in game state 1
+    this.a = Math.atan2(mouseY - this.y, mouseX - this.x);
     translate(this.x, this.y);
-    rotate(a);
+    rotate(this.a);
     beginShape();
     ellipse(0, 0, this.diameter, this.diameter);
     line(0, 0, this.diameter, 0);
@@ -80,39 +87,40 @@ class Poacher {
   move(){
       if(keyIsDown(87)) {
           poacher.y-=3;
-          poacher.regX-=3;
+
       } if (keyIsDown(83)) {
           poacher.y+=3;
-          poacher.regY+=3;
+
       } if(keyIsDown(65)){
           poacher.x-=3;
-          poacher.regX+=3;
+
       } if(keyIsDown(68)) {
           poacher.x+=3;
-          poacher.regX+=3;
+
       }
     }
 
     shoot(){
-      let bullet = new Bullet();
-      bullet.display();
-      bullet.move();
+      let bullet = new Bullet(this.a);
+      bullets.push (bullet);
     }
 
   }
 
 class Bullet {
-  constructor(){
-    this.x = 10;
-    this.y = 10;
+  constructor(_a){
+    this.x = 0;
+    this.y = 0;
     this.diameter = 5;
+    this.a = _a;
   }
 
   display(){
+    fill(0);
     ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 
   move(){
-    this.x += 3;
+    this.x += 6;
   }
 }
