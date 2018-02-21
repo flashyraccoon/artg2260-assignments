@@ -5,6 +5,7 @@ let width = 500;
 let height = 500;
 let a;
 let bullets = [];
+let time = framecount % framerate;
 
 
 function setup(){
@@ -122,5 +123,26 @@ class Bullet {
 
   move(){
     this.x += 6;
+  }
+}
+
+class Unicorn {
+  constructor(){
+    this.x = random(0||width);
+    this.y = random(height);
+    this.diameter = 20;
+  }
+
+  display(){
+    fill(100,100,100);
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+  }
+
+  move(){
+    if(this.x == 0){
+      x+= 4;
+    } else if(this.x == wifth){
+      x-= 4;
+    }
   }
 }
