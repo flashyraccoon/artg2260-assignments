@@ -9,13 +9,14 @@ let bullets = [];
 let timePassed;
 let intervals = [90, 210, 300];
 let lives = 3;
-
+let img_heart_full;
+let img_heart_empty;
 
 function setup(){
   framerate = 30;
   createCanvas(500,500);
-  let img_heart_full = loadImage("images\assets\heart-full.png");
-  let img_heart_empty = loadImage("images\assets\heart-empty.png");
+  img_heart_full = loadImage("images/assets/heart-full.png");
+  img_heart_empty = loadImage("images/assets/heart-empty.png");
 
   poacher = new Poacher();
 }
@@ -27,7 +28,7 @@ function draw(){
   } else if (gameState == 1){
     update();
     for (i = 0; i < lives; i++){
-      img(img_heart_full, 40+i, 20, 20, 20);
+      image(img_heart_full, 40+i, 20, 20, 20);
     }
     poacher.display();
     poacher.move();
