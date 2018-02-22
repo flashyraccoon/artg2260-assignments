@@ -9,26 +9,31 @@ let bullets = [];
 let timePassed;
 let intervals = [90, 210, 300];
 let lives = 3;
-let img_heart_full;
-let img_heart_empty;
+let xSpawn = [0, 500];
+let ySpawn = [0, 500];
+let time;
 
 function setup(){
-  framerate = 30;
-  createCanvas(500,500);
-  img_heart_full = loadImage("images/assets/heart-full.png");
-  img_heart_empty = loadImage("images/assets/heart-empty.png");
-
+  //framerate = 30;
+  frameRate(60);
+  time = frameCount;
+  var cnv = createCanvas(500,500);
+  //cnv.parent('sketch-holder');
   poacher = new Poacher();
 }
 
 function draw(){
   background(255);
-  if (gameState == 0){
+  if (gameState == 0 ){
     startScreen();
+    lives = 3;
+    score = 0;
+    time = time*0;
+
   } else if (gameState == 1){
     update();
-    for (i = 0; i < lives; i++){
-      image(img_heart_full, 40+i, 20, 20, 20);
+    if (lives == 0) {
+      gameState = 2;
     }
     poacher.display();
     poacher.move();
@@ -40,25 +45,39 @@ function draw(){
     for (u of unicorns) {
       u.move();
       u.display();
+      if (u.overlaps(b)){
+        if(u.shot == false) {
+          u.color = (255);
+          u.alpha = (0);
+          u.shot = true;
+          score ++;
+        }
+      }
+      if (u.overlaps(poacher)) {
+        if(u.alpha == 100) {
+          lives --;
+          u.color = (255);
+          u.alpha = (0);
+        }
+      }
     }
     timePassed = frameCount % random(intervals);
     if (timePassed == 0) {
-      print("Time passed is " + timePassed);
-      let unicorn = new Unicorn();
+      let unicorn = new Unicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       unicorns.push (unicorn);
     }
   } else if (gameState == 2){
     gameOver();
   }
 
+
 }
 
-
 function mouseClicked(){
-   if (gameState == 0){
+   if (gameState == 0 ){
      gameState = 1;
    } else if (gameState == 2){
-     gameState = 0;
+     gameState = 3;
    } else if (gameState == 1){
      poacher.shoot();
    }
@@ -70,12 +89,20 @@ function startScreen() {
   text("click to begin", 10, 30);
 }
 
+function replayScreen() {
+  background(255);
+  fill(0);
+  text("Game Over", 10, 30);
+}
+
 function update() {
   background(255);
-  score++;
+  time++;
   fill(0);
   text("playing", 10, 30);
-  text("score: " + score, 400, 30);
+  text("Time: " + round(time/60), 400, 30);
+  text("Unicorns: " + score, 300, 30)
+  text("Lives: " + lives, 200, 30);
 }
 
 function gameOver(){
@@ -88,7 +115,6 @@ function gameOver(){
 
 
 class Poacher {
-
   constructor(){
     this.x = width/2;
     this.y = height/2;
@@ -96,10 +122,12 @@ class Poacher {
     this.a = 0;
     this.color = 255;
     this.outline = 0;
+
   }
 
   display(){
  // put a conditional for a -> only in game state 1
+    push();
     this.a = Math.atan2(mouseY - this.y, mouseX - this.x);
     fill(this.color);
     stroke(this.outline);
@@ -109,6 +137,7 @@ class Poacher {
     ellipse(0, 0, this.diameter, this.diameter);
     line(0, 0, this.diameter, 0);
     endShape();
+    pop();
   }
 
   move(){
@@ -128,17 +157,17 @@ class Poacher {
     }
 
     shoot(){
-      let bullet = new Bullet();
+      let bullet = new Bullet(this.a, this.x, this.y);
       bullets.push (bullet);
     }
-
   }
 
 class Bullet {
-  constructor(){
-    this.x = 0;
-    this.y = 0;
-    this.diameter = 5;
+  constructor(_a, _x, _y){
+    this.a = _a;
+    this.x = _x;
+    this.y = _y;
+    this.diameter = 10;
     //this.a = poacher.a;
     this.color = 0;
 
@@ -150,28 +179,59 @@ class Bullet {
   }
 
   move(){
-    this.x += 6;
+    this.x += 6*cos(this.a);
+    this.y += 6*sin(this.a);
+
   }
 }
 
 class Unicorn {
 
-  constructor(){
-    this.x = 0;
-    this.y = 50;
-    this.diameter = 20;
+  constructor(_xSpawn, _ySpawn, _xSpeed, _ySpeed){
+    this.xSpawn = _xSpawn;
+    this.ySpawn = _ySpawn;
+    this.x = _xSpawn;
+    this.y = _ySpawn;
+    this.xSpeed = _xSpeed;
+    this.ySpeed = _ySpeed;
+    this.diameter = 30;
     this.color = 155;
-    this.alpha = 50;
+    this.alpha = 100;
+    this.shot = false;
 
   }
 
   display(){
+    noStroke();
     fill(this.color, this.alpha);
-    ellipse(20, 20, this.diameter, this.diameter);
+    ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 
   move(){
-    this.x += 4;
-    this.y += 4;
+    if (this.xSpawn == 0) {
+      if (this.ySpawn <= 250) {
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+      } else if (this.ySpawn >= 250) {
+        this.x += this.xSpeed;
+        this.y -= this.ySpeed;
+      }
+    } else if (this.xSpawn == 500) {
+      if (this.ySpawn <= 250) {
+        this.x -= this.xSpeed;
+        this.y += this.ySpeed;
+      } else if (this.ySpawn >= 250) {
+        this.x -= this.xSpeed;
+        this.y -= this.ySpeed;
+      }
+    }
   }
+
+  overlaps(other){
+		let d = dist(other.x, other.y, this.x, this.y);
+		return (d < this.diameter/2 + other.diameter/2);
+    if (lives == 0) {
+      gameState = 0;
+    }
+	}
 }
