@@ -74,7 +74,7 @@ function draw(){
       }
 
       if (u.overlaps(poacher)) {
-        if(u.alpha == 100) {
+        if(u.alpha == 255) {
           lives --;
           u.color = (255);
           u.alpha = (0);
