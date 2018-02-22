@@ -15,16 +15,20 @@ let ySpawn = [0, 500];
 let time;
 let imgBackground;
 let imgPoacher;
-let imgUnicorn;
+//let imgUnicorn;
+let font3DTitle;
+let font2DTitle;
 
 
 /*function preload() {
-  font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
-  font2DTitle = loadFont("fonts/2Dumb.ttf");
-  imgBackground = loadImage('images/assets/lawn.jpg');
+
 }
 */
 function setup(){
+  font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
+  font2DTitle = loadFont("fonts/2Dumb.ttf");
+  imgBackground = loadImage('images/assets/lawn.jpg');
+  imgPoacher = loadImage("images/assets/poacher.png");
   //image(imgBackground, 0, 0);
   //framerate = 30;
   frameRate(60);
@@ -85,6 +89,28 @@ function draw(){
       /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       dangerunicorns.push (dangerunicorn); */
     }
+    noStroke();
+    fill(255);
+    rect(0, 0, 500, 40);
+
+    stroke(0);
+    line(0, 40, width, 40);
+
+
+    textAlign(LEFT);
+    textSize(14);
+  //  textFont(font2DTitle);
+    fill(0);
+    text("Play!", 10, 30);
+  //  textFont(font2DTitle);
+    fill(0);
+    text("Time: " + round(time/60), 400, 30);
+  //  textFont(font2DTitle);
+    fill(0);
+    text("Unicorns: " + score, 300, 30)
+  //  textFont(font2DTitle);
+    fill(0);
+    text("Lives: " + lives, 200, 30);
   } else if (gameState == 2){
     gameOver();
   }
@@ -107,45 +133,37 @@ function startScreen() {
   //image(imgBackground, 0, 0);
   fill(0);
 
-  //textFont(font3DTitle);
+
   textAlign(CENTER);
   textSize(34);
+  //textFont(font3DTitle);
   text("Unicorn Poacher", 250, 100);
 
-  textSize(20);
-  text("Poach the Unicorns! But don't let them get you!", 250, 150);
-  textSize(24);
-  text("Controls:", 250, 200);
-  textSize(20);
-  text("W: up", 250, 225);
-  text("A: left", 250, 250);
-  text("S: down", 250, 275);
-  text("D: right", 250, 300);
-  text("Mouse: aim", 250, 325);
-  text("Left MB: shoot", 250, 350);
+  fill(0);
   //textFont(font2DTitle);
+  textSize(24);
+  text("Poach the Unicorns!", 250, 150);
+  text("But don't let them get you!", 250, 180);
+  textSize(20);
+  text("Controls:", 250, 220);
+  textSize(20);
+  text("W: up", 250, 245);
+  text("A: left", 250, 270);
+  text("S: down", 250, 295);
+  text("D: right", 250, 320);
+  text("Mouse: aim", 250, 345);
+  text("Left MB: shoot", 250, 370);
+
   textAlign(CENTER);
   textSize(28);
   text("click to begin", 250, 450);
 }
 
 function update() {
+  time++;
   background(255);
   //image(imgBackground, 0, 0);
-  stroke(0);
-  line(0, 40, width, 40);
-  time++;
 
-  textAlign(LEFT);
-  textSize(14);
-//  textFont(font2DTitle);
-  text("Play!", 10, 30);
-//  textFont(font2DTitle);
-  text("Time: " + round(time/60), 400, 30);
-//  textFont(font2DTitle);
-  text("Unicorns: " + score, 300, 30)
-//  textFont(font2DTitle);
-  text("Lives: " + lives, 200, 30);
 }
 
 function gameOver(){
@@ -184,6 +202,7 @@ class Poacher {
     ellipse(0, 0, this.diameter, this.diameter);
     line(0, 0, this.diameter, 0);
     endShape();
+    image(imgPoacher, 0, 0, this.diameter, this.diameter);
     pop();
   }
 
