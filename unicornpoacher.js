@@ -12,11 +12,15 @@ let lives = 3;
 let xSpawn = [0, 500];
 let ySpawn = [0, 500];
 let time;
+let imgBackground;
+let imgPoacher;
+let imgUnicorn;
 
 function setup(){
   //framerate = 30;
   frameRate(60);
   time = frameCount;
+  //imgBackground = loadImage("images/assets/lawn.jpg");
   var cnv = createCanvas(500,500);
   //cnv.parent('sketch-holder');
   poacher = new Poacher();
@@ -35,6 +39,7 @@ function draw(){
     if (lives == 0) {
       gameState = 2;
     }
+    //image(imgBackground, 0, 0);
     poacher.display();
     poacher.move();
     for (b of bullets) {
@@ -122,6 +127,7 @@ class Poacher {
     this.a = 0;
     this.color = 255;
     this.outline = 0;
+    this.radius = this.diameter/2;
 
   }
 
@@ -142,17 +148,21 @@ class Poacher {
 
   move(){
       if(keyIsDown(87)) {
+        if(poacher.y > poacher.radius) {
           poacher.y-=3;
-
+        }
       } if (keyIsDown(83)) {
-          poacher.y+=3;
-
+          if(poacher.y < height-poacher.radius) {
+            poacher.y+=3;
+          }
       } if(keyIsDown(65)){
-          poacher.x-=3;
-
+          if(poacher.x > poacher.radius) {
+            poacher.x-=3;
+          }
       } if(keyIsDown(68)) {
-          poacher.x+=3;
-
+          if(poacher.x < width-poacher.radius) {
+            poacher.x+=3;
+          }
       }
     }
 
@@ -170,6 +180,7 @@ class Bullet {
     this.diameter = 10;
     //this.a = poacher.a;
     this.color = 0;
+    this.radius = this.diameter/2;
 
   }
 
@@ -198,6 +209,7 @@ class Unicorn {
     this.color = 155;
     this.alpha = 100;
     this.shot = false;
+    this.radius = this.diameter/2;
 
   }
 
@@ -229,7 +241,7 @@ class Unicorn {
 
   overlaps(other){
 		let d = dist(other.x, other.y, this.x, this.y);
-		return (d < this.diameter/2 + other.diameter/2);
+		return (d < (this.radius + other.radius));
     if (lives == 0) {
       gameState = 0;
     }
