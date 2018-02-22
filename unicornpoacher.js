@@ -203,7 +203,7 @@ class Poacher {
     ellipse(0, 0, this.diameter, this.diameter);
     line(0, 0, this.diameter, 0);
     endShape();
-    image(imgPoacher, 20, 20, 40, 40);
+    image(imgPoacher, -20, -20, 40, 40);
 
     pop();
 
