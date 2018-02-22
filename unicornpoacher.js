@@ -16,16 +16,16 @@ let time;
 let imgBackground;
 let imgPoacher;
 let imgUnicorn;
-let imgBackground;
 
-function preload() {
+
+/*function preload() {
   font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
   font2DTitle = loadFont("fonts/2Dumb.ttf");
   imgBackground = loadImage('images/assets/lawn.jpg');
 }
-
+*/
 function setup(){
-  image(imgBackground, 0, 0);
+  //image(imgBackground, 0, 0);
   //framerate = 30;
   frameRate(60);
   time = frameCount;
@@ -96,7 +96,7 @@ function mouseClicked(){
    if (gameState == 0 ){
      gameState = 1;
    } else if (gameState == 2){
-     gameState = 3;
+     gameState = 0;
    } else if (gameState == 1){
      poacher.shoot();
    }
@@ -104,46 +104,47 @@ function mouseClicked(){
 
 function startScreen() {
   background(255);
-  image(imgBackground, 0, 0);
+  //image(imgBackground, 0, 0);
   fill(0);
 
-  textFont(font3DTitle);
+  //textFont(font3DTitle);
   textAlign(CENTER);
   textSize(34);
-  text("Unicorn Poacher", width/2, height/2);
+  text("Unicorn Poacher", 250, 100);
 
-  textFont(font2DTitle);
+  textSize(20);
+  text("Poach the Unicorns! But don't let them get you!", 250, 150);
+  textSize(24);
+  text("Controls:", 250, 200);
+  textSize(20);
+  text("W: up", 250, 225);
+  text("A: left", 250, 250);
+  text("S: down", 250, 275);
+  text("D: right", 250, 300);
+  text("Mouse: aim", 250, 325);
+  text("Left MB: shoot", 250, 350);
+  //textFont(font2DTitle);
   textAlign(CENTER);
-  textSize(12);
-  text("click to begin", width/2, 300);
-}
-
-function replayScreen() {
-  background(255);
-  fill(0);
-
-  textAlign(LEFT);
-  textSize(12);
-  textFont(font2DTitle);
-  text("Game Over", 10, 30);
+  textSize(28);
+  text("click to begin", 250, 450);
 }
 
 function update() {
   background(255);
-  image(imgBackground, 0, 0);
+  //image(imgBackground, 0, 0);
   stroke(0);
   line(0, 40, width, 40);
   time++;
 
   textAlign(LEFT);
-  textSize(8);
-  textFont(font2DTitle);
-  text("playing", 10, 30);
-  textFont(font2DTitle);
+  textSize(14);
+//  textFont(font2DTitle);
+  text("Play!", 10, 30);
+//  textFont(font2DTitle);
   text("Time: " + round(time/60), 400, 30);
-  textFont(font2DTitle);
+//  textFont(font2DTitle);
   text("Unicorns: " + score, 300, 30)
-  textFont(font2DTitle);
+//  textFont(font2DTitle);
   text("Lives: " + lives, 200, 30);
 }
 
