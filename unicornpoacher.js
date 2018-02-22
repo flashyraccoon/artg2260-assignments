@@ -104,6 +104,7 @@ function mouseClicked(){
 
 function startScreen() {
   background(255);
+  image(imgBackground, 0, 0);
   fill(0);
 
   textFont(font3DTitle);
@@ -129,6 +130,7 @@ function replayScreen() {
 
 function update() {
   background(255);
+  image(imgBackground, 0, 0);
   stroke(0);
   line(0, 40, width, 40);
   time++;
