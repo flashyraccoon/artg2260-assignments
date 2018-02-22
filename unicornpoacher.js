@@ -2,6 +2,7 @@ let gameState = 0;
 let score = 0;
 let poacher;
 let unicorns = [];
+let dangerunicorns = [];
 let width = 500;
 let height = 500;
 let a = 0;
@@ -15,8 +16,16 @@ let time;
 let imgBackground;
 let imgPoacher;
 let imgUnicorn;
+let imgBackground;
+
+function preload() {
+  font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
+  font2DTitle = loadFont("fonts/2Dumb-webfont.ttf");
+  imgBackground = loadImage('images/assets/lawn.jpg');
+}
 
 function setup(){
+  image(imgBackground, 0, 0);
   //framerate = 30;
   frameRate(60);
   time = frameCount;
@@ -45,19 +54,21 @@ function draw(){
     for (b of bullets) {
       b.move();
       b.display();
-      print("bullet comes!");
     }
     for (u of unicorns) {
       u.move();
       u.display();
-      if (u.overlaps(b)){
-        if(u.shot == false) {
-          u.color = (255);
-          u.alpha = (0);
-          u.shot = true;
-          score ++;
+      for (b of bullets) {
+        if (u.overlaps(b)){
+          if(u.shot == false) {
+            u.color = (255);
+            u.alpha = (0);
+            u.shot = true;
+            score ++;
+          }
         }
       }
+
       if (u.overlaps(poacher)) {
         if(u.alpha == 100) {
           lives --;
@@ -70,6 +81,9 @@ function draw(){
     if (timePassed == 0) {
       let unicorn = new Unicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       unicorns.push (unicorn);
+
+      /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
+      dangerunicorns.push (dangerunicorn); */
     }
   } else if (gameState == 2){
     gameOver();
@@ -91,22 +105,43 @@ function mouseClicked(){
 function startScreen() {
   background(255);
   fill(0);
-  text("click to begin", 10, 30);
+
+  textFont(font3DTitle);
+  textAlign(CENTER);
+  textSize(34);
+  text("Unicorn Poacher", width/2, height/2);
+
+  textFont(font2DTitle);
+  textAlign(CENTER);
+  textSize(12);
+  text("click to begin", width/2, 300);
 }
 
 function replayScreen() {
   background(255);
   fill(0);
+
+  textAlign(LEFT);
+  textSize(12);
+  textFont(font2DTitle);
   text("Game Over", 10, 30);
 }
 
 function update() {
   background(255);
+  stroke(0);
+  line(0, 40, width, 40);
   time++;
-  fill(0);
+
+  textAlign(LEFT);
+  textSize(8);
+  textFont(font2DTitle);
   text("playing", 10, 30);
+  textFont(font2DTitle);
   text("Time: " + round(time/60), 400, 30);
+  textFont(font2DTitle);
   text("Unicorns: " + score, 300, 30)
+  textFont(font2DTitle);
   text("Lives: " + lives, 200, 30);
 }
 
@@ -125,9 +160,12 @@ class Poacher {
     this.y = height/2;
     this.diameter = 20;
     this.a = 0;
-    this.color = 255;
+    this.colorR = 255;
+    this.colorG = 0;
+    this.colorB = 0;
     this.outline = 0;
     this.radius = this.diameter/2;
+    this.alpha = 0;
 
   }
 
@@ -135,7 +173,7 @@ class Poacher {
  // put a conditional for a -> only in game state 1
     push();
     this.a = Math.atan2(mouseY - this.y, mouseX - this.x);
-    fill(this.color);
+    fill(this.colorR, this.colorG, this.colorB, this.alpha);
     stroke(this.outline);
     translate(this.x, this.y);
     rotate(this.a);
@@ -148,7 +186,7 @@ class Poacher {
 
   move(){
       if(keyIsDown(87)) {
-        if(poacher.y > poacher.radius) {
+        if(poacher.y > 40+poacher.radius) {
           poacher.y-=3;
         }
       } if (keyIsDown(83)) {
@@ -247,3 +285,39 @@ class Unicorn {
     }
 	}
 }
+
+/*class DangerUnicorn {
+
+  constructor(_xSpawn, _ySpawn, _xSpeed, _ySpeed){
+    this.xSpawn = _xSpawn;
+    this.ySpawn = _ySpawn;
+    this.x = _xSpawn;
+    this.y = _ySpawn;
+    this.xSpeed = _xSpeed;
+    this.ySpeed = _ySpeed;
+    this.diameter = 30;
+    this.color = 0;
+    this.alpha = 255;
+    this.shot = false;
+    this.radius = this.diameter/2;
+
+  }
+
+  display(){
+    noStroke();
+    fill(this.color, this.alpha);
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+  }
+
+  move(){
+
+  }
+
+  overlaps(other){
+		let d = dist(other.x, other.y, this.x, this.y);
+		return (d < (this.radius + other.radius));
+    if (lives == 0) {
+      gameState = 0;
+    }
+	}
+} */
