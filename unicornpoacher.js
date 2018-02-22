@@ -40,7 +40,7 @@ function setup(){
 }
 
 function draw(){
-  background(255);
+  background(51, 153, 51);
   if (gameState == 0 ){
     startScreen();
     lives = 3;
@@ -129,7 +129,7 @@ function mouseClicked(){
   }
 
 function startScreen() {
-  background(255);
+  background(51, 153, 51);
   //image(imgBackground, 0, 0);
   fill(0);
 
@@ -161,7 +161,7 @@ function startScreen() {
 
 function update() {
   time++;
-  background(255);
+  background(51, 153, 51);
   //image(imgBackground, 0, 0);
 
 }
@@ -268,8 +268,8 @@ class Unicorn {
     this.xSpeed = _xSpeed;
     this.ySpeed = _ySpeed;
     this.diameter = 30;
-    this.color = 155;
-    this.alpha = 100;
+    //this.color = (random(20,240), random(20,240), random(20,240));
+    this.alpha = 255;
     this.shot = false;
     this.radius = this.diameter/2;
 
@@ -277,7 +277,7 @@ class Unicorn {
 
   display(){
     noStroke();
-    fill(this.color, this.alpha);
+    fill(random(20,240), random(20,240), random(20,240), this.alpha);
     ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 
