@@ -188,6 +188,7 @@ class Poacher {
     this.radius = this.diameter/2;
     this.alpha = 0;
 
+
   }
 
   display(){
@@ -202,8 +203,9 @@ class Poacher {
     ellipse(0, 0, this.diameter, this.diameter);
     line(0, 0, this.diameter, 0);
     endShape();
-    image(imgPoacher, 0, 0, this.diameter, this.diameter);
     pop();
+    image(imgPoacher, 20, 20, 40, 40);
+
   }
 
   move(){
