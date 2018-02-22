@@ -201,6 +201,7 @@ class Poacher {
     rotate(this.a);
     beginShape();
     ellipse(0, 0, this.diameter, this.diameter);
+    strokeWeight(5);
     line(0, 0, this.diameter, 0);
     endShape();
     image(imgPoacher, -20, -20, 40, 40);
