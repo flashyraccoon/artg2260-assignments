@@ -40,7 +40,7 @@ function setup(){
 }
 
 function draw(){
-  background(51, 153, 51);
+  background(121, 210, 121);
   if (gameState == 0 ){
     startScreen();
     lives = 3;
@@ -129,7 +129,7 @@ function mouseClicked(){
   }
 
 function startScreen() {
-  background(51, 153, 51);
+  background(121, 210, 121);
   //image(imgBackground, 0, 0);
   fill(0);
 
@@ -161,7 +161,7 @@ function startScreen() {
 
 function update() {
   time++;
-  background(51, 153, 51);
+  background(121, 210, 121);
   //image(imgBackground, 0, 0);
 
 }
