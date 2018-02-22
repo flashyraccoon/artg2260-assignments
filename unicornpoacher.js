@@ -20,7 +20,7 @@ let imgBackground;
 
 function preload() {
   font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
-  font2DTitle = loadFont("fonts/2Dumb-webfont.ttf");
+  font2DTitle = loadFont("fonts/2Dumb.ttf");
   imgBackground = loadImage('images/assets/lawn.jpg');
 }
 
