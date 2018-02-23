@@ -52,7 +52,7 @@ function draw(){
     if (lives == 0) {
       gameState = 2;
     }
-    //image(imgBackground, 0, 0);
+    image(imgBackground, 0, 0);
     poacher.display();
     poacher.move();
     for (b of bullets) {
@@ -89,10 +89,10 @@ function draw(){
       /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       dangerunicorns.push (dangerunicorn); */
     }
-    image(imgBackground, 0, 0);
+
     noStroke();
     fill(255);
-    rect(0, 0, 500, 40);
+    rect(0, 0, width, 40);
 
     stroke(0);
     line(0, 40, width, 40);
