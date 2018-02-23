@@ -3,15 +3,15 @@ let score = 0;
 let poacher;
 let unicorns = [];
 let dangerunicorns = [];
-let width = 500;
+let width = 1000;
 let height = 500;
 let a = 0;
 let bullets = [];
 let timePassed;
 let intervals = [90, 210, 300];
 let lives = 3;
-let xSpawn = [0, 500];
-let ySpawn = [0, 500];
+let xSpawn = [0, width];
+let ySpawn = [0, height];
 let time;
 let imgBackground;
 let imgPoacher;
@@ -33,8 +33,8 @@ function setup(){
   //framerate = 30;
   frameRate(60);
   time = frameCount;
-  //imgBackground = loadImage("images/assets/lawn.jpg");
-  var cnv = createCanvas(500,500);
+  imgBackground = loadImage("images/assets/lawn.jpg");
+  var cnv = createCanvas(1000,500);
   //cnv.parent('sketch-holder');
   poacher = new Poacher();
 }
@@ -137,26 +137,26 @@ function startScreen() {
   textAlign(CENTER);
   textSize(34);
   //textFont(font3DTitle);
-  text("Unicorn Poacher", 250, 100);
+  text("Unicorn Poacher", width/2, 100);
 
   fill(0);
   //textFont(font2DTitle);
   textSize(24);
-  text("Poach the Unicorns!", 250, 150);
-  text("But don't let them get you!", 250, 180);
+  text("Poach the Unicorns!", width/2, 150);
+  text("But don't let them get you!", width/2, 180);
   textSize(20);
-  text("Controls:", 250, 220);
+  text("Controls:", width/2, 220);
   textSize(20);
-  text("W: up", 250, 245);
-  text("A: left", 250, 270);
-  text("S: down", 250, 295);
-  text("D: right", 250, 320);
-  text("Mouse: aim", 250, 345);
-  text("Left MB: shoot", 250, 370);
+  text("W: up", width/2, 245);
+  text("A: left", width/2, 270);
+  text("S: down", width/2, 295);
+  text("D: right", width/2, 320);
+  text("Mouse: aim", width/2, 345);
+  text("Left MB: shoot", width/2, 370);
 
   textAlign(CENTER);
   textSize(28);
-  text("click to begin", 250, 450);
+  text("click to begin", width/2, 450);
 }
 
 function update() {
@@ -179,7 +179,7 @@ class Poacher {
   constructor(){
     this.x = width/2;
     this.y = height/2;
-    this.diameter = 20;
+    this.diameter = 40;
     this.a = 0;
     this.colorR = 255;
     this.colorG = 0;
@@ -204,7 +204,7 @@ class Poacher {
     strokeWeight(5);
     line(0, 0, this.diameter, 0);
     endShape();
-    image(imgPoacher, -20, -20, 40, 40);
+    image(imgPoacher, -20, -20, 60, 60);
 
     pop();
 
@@ -269,7 +269,7 @@ class Unicorn {
     this.y = _ySpawn;
     this.xSpeed = _xSpeed;
     this.ySpeed = _ySpeed;
-    this.diameter = 30;
+    this.diameter = 60;
     //this.color = (random(20,240), random(20,240), random(20,240));
     this.alpha = 255;
     this.shot = false;
@@ -285,18 +285,18 @@ class Unicorn {
 
   move(){
     if (this.xSpawn == 0) {
-      if (this.ySpawn <= 250) {
+      if (this.ySpawn <= height/2) {
         this.x += this.xSpeed;
         this.y += this.ySpeed;
-      } else if (this.ySpawn >= 250) {
+      } else if (this.ySpawn >= height/2) {
         this.x += this.xSpeed;
         this.y -= this.ySpeed;
       }
-    } else if (this.xSpawn == 500) {
-      if (this.ySpawn <= 250) {
+    } else if (this.xSpawn == width) {
+      if (this.ySpawn <= width/2) {
         this.x -= this.xSpeed;
         this.y += this.ySpeed;
-      } else if (this.ySpawn >= 250) {
+      } else if (this.ySpawn >= width/2) {
         this.x -= this.xSpeed;
         this.y -= this.ySpeed;
       }
