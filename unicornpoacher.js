@@ -89,6 +89,7 @@ function draw(){
       /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       dangerunicorns.push (dangerunicorn); */
     }
+    image(imgBackground, 0, 0);
     noStroke();
     fill(255);
     rect(0, 0, 500, 40);
@@ -274,7 +275,6 @@ class Unicorn {
     this.alpha = 255;
     this.shot = false;
     this.radius = this.diameter/2;
-
   }
 
   display(){
