@@ -180,7 +180,7 @@ class Poacher {
   constructor(){
     this.x = width/2;
     this.y = height/2;
-    this.diameter = 60;
+    this.diameter = 100;
     this.a = 0;
     this.colorR = 255;
     this.colorG = 0;
@@ -205,7 +205,7 @@ class Poacher {
     strokeWeight(5);
     line(0, 0, this.diameter, 0);
     endShape();
-    image(imgPoacher, 0, 0, 60, 60);
+    image(imgPoacher, this.radius, 0, 60, 60);
 
     pop();
 
