@@ -180,7 +180,7 @@ class Poacher {
   constructor(){
     this.x = width/2;
     this.y = height/2;
-    this.diameter = 100;
+    this.diameter = 80;
     this.a = 0;
     this.colorR = 255;
     this.colorG = 0;
