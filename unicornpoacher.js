@@ -214,19 +214,19 @@ class Poacher {
   move(){
       if(keyIsDown(87)) {
         if(poacher.y > 40+poacher.radius) {
-          poacher.y-=3;
+          poacher.y-=5;
         }
       } if (keyIsDown(83)) {
           if(poacher.y < height-poacher.radius) {
-            poacher.y+=3;
+            poacher.y+=5;
           }
       } if(keyIsDown(65)){
           if(poacher.x > poacher.radius) {
-            poacher.x-=3;
+            poacher.x-=5;
           }
       } if(keyIsDown(68)) {
           if(poacher.x < width-poacher.radius) {
-            poacher.x+=3;
+            poacher.x+=5;
           }
       }
     }
