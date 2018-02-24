@@ -205,7 +205,7 @@ class Poacher {
     strokeWeight(5);
     line(0, 0, this.diameter, 0);
     endShape();
-    image(imgPoacher, 0, 0, this.radius, this.radius);
+    image(imgPoacher, 0, 0, this.diameter, this.diameter);
 
     pop();
 
