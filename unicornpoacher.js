@@ -64,11 +64,13 @@ function draw(){
       u.display();
       for (b of bullets) {
         if (u.overlaps(b)){
-          if(u.shot == false) {
-            u.color = (255);
-            u.alpha = (0);
-            u.shot = true;
-            score ++;
+          if (u.x > -u.diameter/2 && u.x < width+(u.diameter/2) && u.y > 40-u.diameter/2 && u.y < height+u.diameter/2) {
+            if(u.shot == false) {
+              u.color = (255);
+              u.alpha = (0);
+              u.shot = true;
+              score ++;
+            }
           }
         }
       }
