@@ -255,8 +255,8 @@ class Bullet {
   }
 
   move(){
-    this.x += 6*cos(this.a);
-    this.y += 6*sin(this.a);
+    this.x += 8*cos(this.a);
+    this.y += 8*sin(this.a);
 
   }
 }
