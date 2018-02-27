@@ -18,6 +18,7 @@ let imgPoacher;
 //let imgUnicorn;
 let font3DTitle;
 let font2DTitle;
+let multipliers = [];
 
 
 /*function preload() {
@@ -70,6 +71,13 @@ function draw(){
               u.alpha = (0);
               u.shot = true;
               score ++;
+              b.count ++;
+              if (b.count == 2) {
+                let multiplier = new Multiplier();
+                multipliers.push (multiplier);
+
+                multiplier.display();
+              }
             }
           }
         }
@@ -166,8 +174,9 @@ function update() {
   time++;
   background(121, 210, 121);
   //image(imgBackground, 0, 0);
-
 }
+
+
 
 function gameOver(){
   if (gameState == 0){
@@ -177,6 +186,23 @@ function gameOver(){
   }
 }
 
+class Multiplier {
+  constructor(_) {
+    this.alpha = 0;
+    this.textSize = 40;
+  }
+
+  display() {
+    this.alpha = 255;
+    for (let d = 0; d < 255; d++) {
+      this.alpha --;
+      textSize(this.textSize);
+      textAlign(CENTER);
+      stroke(0, this.alpha);
+      text("Double Hit", width/2, height/2);
+    }
+  }
+}
 
 class Poacher {
   constructor(){
@@ -248,6 +274,7 @@ class Bullet {
     //this.a = poacher.a;
     this.color = 0;
     this.radius = this.diameter/2;
+    this.count = 0;
 
   }
 

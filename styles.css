@@ -16,7 +16,7 @@ body {
 }
 
 .main {
-  margin-top: 335px;
+  margin-top: 310px;
   padding-top: 40px;
   padding-left: 40px;
   padding-right: 40px;
@@ -280,7 +280,7 @@ h1 {
 
     background-size: cover;
     border-style:none;
-    padding: 150px 0px 40px 40px;
+    padding: 120px 0px 40px 40px;
     margin: 0px;
   }
 
