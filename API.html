@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 100vh;
+        width: 100%;
+       }
+    </style>
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMQ-Ox7rl6lz9nimSCwC1IdZRvsqYosvI&libraries=places"></script>
+-->
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var center = {lat: 39.0, lng: -97.0};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: center
+        });
+        var marker = new google.maps.Marker({
+          position: center,
+          map: map
+        });
+      }
+
+var map;
+var service;
+var infowindow;
+
+function initialize() {
+  var request = {
+    location: pyrmont,
+    radius: '500',
+    type: ['park']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i]);
+    }
+  }
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMQ-Ox7rl6lz9nimSCwC1IdZRvsqYosvI&callback=initMap">
+    </script>
+  </body>
+</html>
