@@ -1,12 +1,9 @@
 let gameState = 0;
 let score = 0;
-let poacher;
-let unicorns = [];
-let dangerunicorns = [];
+let icebergs = [];
 let width = 1000;
 let height = 500;
 let a = 0;
-let bullets = [];
 let timePassed;
 let intervals = [90, 210, 300];
 let lives = 3;
@@ -14,7 +11,7 @@ let xSpawn = [0, width];
 let ySpawn = [0, height];
 let time;
 let imgBackground;
-let imgPoacher;
+let imgPolarbear;
 //let imgUnicorn;
 let font3DTitle;
 let font2DTitle;
@@ -26,18 +23,17 @@ let multipliers = [];
 }
 */
 function setup(){
-  font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
-  font2DTitle = loadFont("fonts/2Dumb.ttf");
-  imgBackground = loadImage('images/assets/lawn.jpg');
-  imgPoacher = loadImage("images/assets/poacher.png");
-  //image(imgBackground, 0, 0);
-  //framerate = 30;
+  //font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
+  //font2DTitle = loadFont("fonts/2Dumb.ttf");
+  //imgBackground = loadImage('images/assets/lawn.jpg');
+// this will be the image of the polar bear
+// imgPolarBear = loadImage("images/assets/poacher.png");
   frameRate(60);
   time = frameCount;
-  imgBackground = loadImage("images/assets/lawn.jpg");
+  //imgBackground = loadImage("images/assets/lawn.jpg");
   var cnv = createCanvas(1000,500);
   //cnv.parent('sketch-holder');
-  poacher = new Poacher();
+  polarbear = new Polarbear();
 }
 
 function draw(){
@@ -53,48 +49,24 @@ function draw(){
     if (lives == 0) {
       gameState = 2;
     }
-    image(imgBackground, 0, 0);
-    poacher.display();
-    poacher.move();
-    for (b of bullets) {
-      b.move();
-      b.display();
-    }
-    for (u of unicorns) {
-      u.move();
-      u.display();
-      for (b of bullets) {
-        if (u.overlaps(b)){
-          if (u.x > 0-u.diameter/2 && u.x < width+(u.diameter/2) && u.y > 40-u.diameter/2 && u.y < height+u.diameter/2) {
-            if(u.shot == false) {
-              u.color = (255);
-              u.alpha = (0);
-              u.shot = true;
-              score ++;
-              b.count ++;
-              if (b.count == 2) {
-                let multiplier = new Multiplier();
-                multipliers.push (multiplier);
-
-                multiplier.display();
-              }
-            }
-          }
-        }
-      }
-
-      if (u.overlaps(poacher)) {
-        if(u.alpha == 255) {
+    //image(imgBackground, 0, 0);
+    polarbear.display();
+    polarbear.keyPressed();
+    for (i of icebergs) {
+      i.move();
+      i.display();
+      if (i.overlaps(polarbear)) {
+        if(i.alpha == 255) {
           lives --;
-          u.color = (255);
-          u.alpha = (0);
+          i.color = (255);
+          i.alpha = (0);
         }
       }
     }
     timePassed = frameCount % random(intervals);
     if (timePassed == 0) {
-      let unicorn = new Unicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
-      unicorns.push (unicorn);
+      let iceberg = new Iceberg(random(xSpawn), random(0, 500), random(1,3), random(0,3));
+      icebergs.push (iceberg);
 
       /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       dangerunicorns.push (dangerunicorn); */
@@ -135,7 +107,7 @@ function mouseClicked(){
    } else if (gameState == 2){
      gameState = 0;
    } else if (gameState == 1){
-     poacher.shoot();
+     polarbear.jump();
    }
   }
 
@@ -186,25 +158,7 @@ function gameOver(){
   }
 }
 
-class Multiplier {
-  constructor(_) {
-    this.alpha = 0;
-    this.textSize = 40;
-  }
-
-  display() {
-    this.alpha = 255;
-    for (let d = 0; d < 255; d++) {
-      this.alpha --;
-      textSize(this.textSize);
-      textAlign(CENTER);
-      stroke(0, this.alpha);
-      text("Double Hit", width/2, height/2);
-    }
-  }
-}
-
-class Poacher {
+class Polarbear {
   constructor(){
     this.x = width/2;
     this.y = height/2;
@@ -233,65 +187,43 @@ class Poacher {
     strokeWeight(5);
     line(0, 0, this.diameter, 0);
     endShape();
-
-
+    //image(imgPolarbear, -(this.radius+15), -(this.radius+35), this.diameter+40, this.diameter+40);
 
     pop();
 
   }
 
-  move(){
-      if(keyIsDown(87)) {
-        if(poacher.y > 40+poacher.radius) {
-          poacher.y-=5;
+
+  keyPressed(){
+      if(keyCode === 87) {
+        if(polarbear.y > 40+polarbear.radius) {
+          polarbear.y-=5;
         }
-      } if (keyIsDown(83)) {
-          if(poacher.y < height-poacher.radius) {
-            poacher.y+=5;
+      } else if (keyCode === 83) {
+          if(polarbear.y < height-polarbear.radius) {
+            polarbear.y+=5;
           }
-      } if(keyIsDown(65)){
-          if(poacher.x > poacher.radius) {
-            poacher.x-=5;
+      } else if(keyCode === 65){
+          if(polarbear.x > polarbear.radius) {
+            polarbear.x-=5;
           }
-      } if(keyIsDown(68)) {
-          if(poacher.x < width-poacher.radius) {
-            poacher.x+=5;
+      } else if(keyCode === 68) {
+          if(polarbear.x < width-polarbear.radius) {
+            polarbear.x+=5;
           }
       }
     }
 
-    shoot(){
-      let bullet = new Bullet(this.a, this.x, this.y);
-      bullets.push (bullet);
+
+    jump(){
+      //let bullet = new Bullet(this.a, this.x, this.y);
+      //bullets.push (bullet);
     }
   }
 
-class Bullet {
-  constructor(_a, _x, _y){
-    this.a = _a;
-    this.x = _x;
-    this.y = _y;
-    this.diameter = 10;
-    //this.a = poacher.a;
-    this.color = 0;
-    this.radius = this.diameter/2;
-    this.count = 0;
 
-  }
 
-  display(){
-    fill(this.color);
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-  }
-
-  move(){
-    this.x += 8*cos(this.a);
-    this.y += 8*sin(this.a);
-
-  }
-}
-
-class Unicorn {
+class Iceberg {
 
   constructor(_xSpawn, _ySpawn, _xSpeed, _ySpeed){
     this.xSpawn = _xSpawn;
@@ -341,39 +273,3 @@ class Unicorn {
     }
 	}
 }
-
-/*class DangerUnicorn {
-
-  constructor(_xSpawn, _ySpawn, _xSpeed, _ySpeed){
-    this.xSpawn = _xSpawn;
-    this.ySpawn = _ySpawn;
-    this.x = _xSpawn;
-    this.y = _ySpawn;
-    this.xSpeed = _xSpeed;
-    this.ySpeed = _ySpeed;
-    this.diameter = 30;
-    this.color = 0;
-    this.alpha = 255;
-    this.shot = false;
-    this.radius = this.diameter/2;
-
-  }
-
-  display(){
-    noStroke();
-    fill(this.color, this.alpha);
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-  }
-
-  move(){
-
-  }
-
-  overlaps(other){
-		let d = dist(other.x, other.y, this.x, this.y);
-		return (d < (this.radius + other.radius));
-    if (lives == 0) {
-      gameState = 0;
-    }
-	}
-} */
