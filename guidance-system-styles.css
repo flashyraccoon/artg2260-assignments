@@ -1,0 +1,106 @@
+
+
+.main {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 50px;
+}
+
+h1 {
+  font-family: 'Tangerine', cursive;
+  font-size: 48px;
+  text-align: center;
+  margin-top: 200px;
+}
+
+h2 {
+  font-family: 'Tangerine', cursive;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+p {
+  font-family: "Cormorant", serif;
+  font-size: 24px;
+  margin-top: 25px;
+}
+
+.narrative {
+  text-indent: 50px;
+}
+
+.image-caption {
+  font-size: 20px;
+  text-align: center;
+}
+
+ul {
+  list-style: circle;
+}
+
+li {
+  font-family: "Cormorant", serif;
+  font-size: 24px;
+  margin-top: 25px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.button {
+  position: relative;
+  font-family: "Cormorant", serif;
+  font-size: 24px;
+  color: black;
+  padding: 8px 40px;
+  margin-left: auto;
+  border-color: black;
+  border: solid;
+  border-width: 1px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 885px) {
+  html * , {
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 25px;
+
+  }
+
+  h1 {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  h2 {
+
+    text-align: center;
+  }
+
+  p {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  li {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
