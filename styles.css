@@ -161,6 +161,21 @@ img {
   padding-bottom: 100%
 }
 
+.repeat_tile_responsive {
+  background-image: url(images/repeat_tile.gif);
+  background-repeat: repeat-x repeat-y;
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.empty {
+  background-image: url(images/repeat_tile.gif);
+  background-repeat: repeat-x repeat-y;
+  style="margin-bottom:30px;"
+}
+
 #repeat_tile {
   padding: 100%;
   margin-bottom: auto;
