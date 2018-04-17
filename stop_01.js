@@ -6,4 +6,5 @@ function preload(){
 
 function setup() {
   song.loop();
+  song.setVolume(0.3);
 }
