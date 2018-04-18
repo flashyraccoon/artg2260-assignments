@@ -70,6 +70,38 @@ a:hover {
   text-align: center;
 }
 
+.tooltip {
+    /* position: relative; */
+    /* display: inline-block; */
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 25%;
+    top: -5px;
+    left: 105%;
+    background-color: white;
+    color: darkslategray;
+    text-align: left;
+    border-radius: 1px;
+    padding: 5px 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* #map {
+        height: auto;
+        width: 100%;
+
+       } */
+
 
 @media screen and (max-width: 885px) {
   html * , {
