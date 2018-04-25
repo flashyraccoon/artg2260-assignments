@@ -28,6 +28,7 @@ let imgPolarbear;
 let icebergImages = [];
 let imgIceberg_01;
 let imgIceberg_02;
+let imgHelp;
 
 let menuHeight = unit;
 let menuWidth = width;
@@ -61,6 +62,8 @@ function preload(){
   icebergImages.push(imgIceberg_01);
   imgIceberg_02 = loadImage("images/ice2.png");
   icebergImages.push(imgIceberg_02);
+  imgHelp = loadImage("images/questionmark.png");
+
 }
 
 function setup(){
@@ -194,7 +197,9 @@ function draw(){
 
 function mouseClicked(){ // starting and restarting the game from the start screen or win screen;
    if (gameState == 0){
-     gameState = 1;
+     if (mouseX > imgHelp.x && mouseX < imgHelp.x2 && mouseY > imgHelp.y && mouseY < imgHelp.y2){
+       open("polar_credits.html", "_self");
+     } else {gameState = 1;}
    } else if (gameState == 2){
      gameState = 0;
    } else if (gameState == 1){
@@ -245,6 +250,9 @@ function startScreen() {
   fill(0);
   stroke(255);
   text("click to begin", width/2, 570);
+
+  image(imgHelp, width-unit, 0);
+
 }
 
 function winScreen(){
