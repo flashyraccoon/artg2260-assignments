@@ -19,6 +19,11 @@ hr {
   box-shadow: 0px 0px 15px 0 rgba(0,0,0,0.2);
 }
 
+.col-xs-12 {
+  margin-right: 0;
+  padding-right: 0;
+}
+
 h1 {
   font-family: 'Tangerine', cursive;
   font-size: 48px;
@@ -68,6 +73,9 @@ li {
   font-family: "Cormorant", serif;
   font-size: 24px;
   margin-top: 25px;
+  margin-left: 7%;
+  list-style-image: url(images/pointer.png);
+
 }
 
 .button-container {
@@ -135,22 +143,24 @@ a:active {
        } */
 
 @media screen and (max-width: 885px) {
-  html * , {
+  html*, {
     margin: 0;
     padding: 0;
   }
 
   .main {
-    margin: 0;
+    padding-top: 0;
+    margin-left: 0;
+    margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    padding-top: 25px;
 
   }
 
   h1 {
     padding-left: 15%;
     padding-right: 15%;
+    margin-top: 15%;
   }
 
   h2 {
@@ -167,7 +177,20 @@ a:active {
     text-indent: 10vw;
   }
 
+  .image-caption {
+    padding: 0, 15%, 0, 15%;
+    text-align: center;
+  }
+
+  ul {
+    margin-left: 7%;
+  }
+
   li {
-    padding-left: 15%;
     padding-right: 15%;
+
+
+    margin-left: 0;
+    padding-left: 10px;
+
   }
