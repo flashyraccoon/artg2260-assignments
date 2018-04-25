@@ -197,7 +197,7 @@ function draw(){
 
 function mouseClicked(){ // starting and restarting the game from the start screen or win screen;
    if (gameState == 0){
-     if (mouseX > imgHelp.x && mouseX < imgHelp.x2 && mouseY > imgHelp.y && mouseY < imgHelp.y2){
+     if (mouseX > width-unit && mouseX < width && mouseY > 0 && mouseY < unit){
        open("polar_credits.html", "_self");
      } else {gameState = 1;}
    } else if (gameState == 2){
