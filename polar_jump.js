@@ -12,10 +12,11 @@ let ySpawn = [0, height];
 let time;
 let imgBackground;
 let imgPolarbear;
-//let imgUnicorn;
+
 let font3DTitle;
 let font2DTitle;
 let multipliers = [];
+
 
 
 /*function preload() {
@@ -23,16 +24,10 @@ let multipliers = [];
 }
 */
 function setup(){
-  //font3DTitle = loadFont("fonts/3Dumb-webfont.ttf");
-  //font2DTitle = loadFont("fonts/2Dumb.ttf");
-  //imgBackground = loadImage('images/assets/lawn.jpg');
-// this will be the image of the polar bear
-// imgPolarBear = loadImage("images/assets/poacher.png");
+
   frameRate(60);
   time = frameCount;
-  //imgBackground = loadImage("images/assets/lawn.jpg");
   var cnv = createCanvas(1000,500);
-  //cnv.parent('sketch-holder');
   polarbear = new Polarbear();
 }
 
@@ -49,7 +44,7 @@ function draw(){
     if (lives == 0) {
       gameState = 2;
     }
-    //image(imgBackground, 0, 0);
+
     polarbear.display();
     polarbear.keyPressed();
     for (i of icebergs) {
@@ -67,9 +62,6 @@ function draw(){
     if (timePassed == 0) {
       let iceberg = new Iceberg(random(xSpawn), random(0, 500), random(1,3), random(0,3));
       icebergs.push (iceberg);
-
-      /*let dangerunicorn = new DangerUnicorn(random(xSpawn), random(0, 500), random(1,3), random(0,3));
-      dangerunicorns.push (dangerunicorn); */
     }
 
     noStroke();
@@ -79,19 +71,18 @@ function draw(){
     stroke(0);
     line(0, 40, width, 40);
 
-
     textAlign(LEFT);
     textSize(14);
-  //  textFont(font2DTitle);
+
     fill(0);
     text("Play!", 10, 30);
-  //  textFont(font2DTitle);
+
     fill(0);
     text("Time: " + round(time/60), 400, 30);
-  //  textFont(font2DTitle);
+
     fill(0);
     text("Unicorns: " + score, 300, 30)
-  //  textFont(font2DTitle);
+
     fill(0);
     text("Lives: " + lives, 200, 30);
   } else if (gameState == 2){
@@ -109,26 +100,24 @@ function mouseClicked(){
    } else if (gameState == 1){
      polarbear.jump();
    }
-  }
+}
 
 function startScreen() {
   background(121, 210, 121);
-  //image(imgBackground, 0, 0);
+
   fill(0);
-
-
   textAlign(CENTER);
   textSize(34);
-  //textFont(font3DTitle);
   text("Unicorn Poacher", width/2, 100);
 
   fill(0);
-  //textFont(font2DTitle);
   textSize(24);
   text("Poach the Unicorns!", width/2, 150);
   text("But don't let them get you!", width/2, 180);
+
   textSize(20);
   text("Controls:", width/2, 220);
+
   textSize(20);
   text("W: up", width/2, 245);
   text("A: left", width/2, 270);
@@ -145,10 +134,7 @@ function startScreen() {
 function update() {
   time++;
   background(121, 210, 121);
-  //image(imgBackground, 0, 0);
 }
-
-
 
 function gameOver(){
   if (gameState == 0){
@@ -159,6 +145,7 @@ function gameOver(){
 }
 
 class Polarbear {
+
   constructor(){
     this.x = width/2;
     this.y = height/2;
@@ -170,33 +157,27 @@ class Polarbear {
     this.outline = 0;
     this.radius = this.diameter/2;
     this.alpha = 0;
-
-
   }
 
   display(){
- // put a conditional for a -> only in game state 1
     push();
-    this.a = Math.atan2(mouseY - this.y, mouseX - this.x);
-    fill(this.colorR, this.colorG, this.colorB, this.alpha);
-    stroke(this.outline);
-    translate(this.x, this.y);
-    rotate(this.a);
-    beginShape();
-    ellipse(0, 0, this.diameter, this.diameter);
-    strokeWeight(5);
-    line(0, 0, this.diameter, 0);
-    endShape();
-    //image(imgPolarbear, -(this.radius+15), -(this.radius+35), this.diameter+40, this.diameter+40);
-
+      this.a = Math.atan2(mouseY - this.y, mouseX - this.x);
+      fill(this.colorR, this.colorG, this.colorB, this.alpha);
+      stroke(this.outline);
+      translate(this.x, this.y);
+      rotate(this.a);
+      beginShape();
+        ellipse(0, 0, this.diameter, this.diameter);
+        strokeWeight(5);
+        line(0, 0, this.diameter, 0);
+      endShape();
     pop();
-
   }
-
 
   keyPressed(){
       if(keyCode === 87) {
-        if(polarbear.y > 40+polarbear.radius) {
+        if(d)
+        else if(polarbear.y > 40+polarbear.radius) {
           polarbear.y-=5;
         }
       } else if (keyCode === 83) {
@@ -213,15 +194,7 @@ class Polarbear {
           }
       }
     }
-
-
-    jump(){
-      //let bullet = new Bullet(this.a, this.x, this.y);
-      //bullets.push (bullet);
-    }
   }
-
-
 
 class Iceberg {
 
@@ -233,7 +206,6 @@ class Iceberg {
     this.xSpeed = _xSpeed;
     this.ySpeed = _ySpeed;
     this.diameter = 60;
-    //this.color = (random(20,240), random(20,240), random(20,240));
     this.alpha = 255;
     this.shot = false;
     this.radius = this.diameter/2;

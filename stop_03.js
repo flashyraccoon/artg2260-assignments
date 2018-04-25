@@ -11,4 +11,6 @@ function setup() {
 
   song2.loop();
   song2.setVolume(0.1);
+
+  noCanvas();
 }
