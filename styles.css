@@ -22,8 +22,6 @@ body {
   padding-right: 40px;
   padding-bottom: 80px;
   margin-bottom: 0px;
-  /* margin-left: auto;
-  margin-right: auto; */ for adding dynamic side panels later; they should asjust depending on window width;
   background-color: white;
   margin-left: 12%;
   margin-right: 12%;
