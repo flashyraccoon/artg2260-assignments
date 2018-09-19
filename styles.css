@@ -168,6 +168,13 @@ img {
   margin-top: 5vh;
 }
 
+.repeat_bug_responsive {
+  background-image: url(images/digitalimage/repeatable_bug_small.png);
+  background-repeat: repeat-x repeat-y;
+
+  height: 100vh;
+}
+
 .empty {
   background-image: url(images/repeat_tile.gif);
   background-repeat: repeat-x repeat-y;
