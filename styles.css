@@ -25,7 +25,7 @@ body {
   background-color: #1a1a1a; /* very dark gray; former: white;*/
   margin-left: 12%;
   margin-right: 12%;
-  box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.9);
 }
 
 h2 {
