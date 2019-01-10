@@ -194,7 +194,7 @@ li {
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
-  color: black;
+  color: #e6e6e6;;
   list-style-image: url(images/bullet.png);
   list-style-position: inside;
 }
@@ -278,6 +278,18 @@ a:active {
   font-size: 24px;
   color: white;/* darkslategray;*/
   text-decoration: underline;
+}
+
+a.textlink {
+  color: #64b0b5;
+}
+
+a.textlink:hover {
+  color: #83c5c9;
+}
+
+a.textlink:active{
+  color: #fcd703;
 }
 
 .top-row-fixed {
@@ -496,6 +508,14 @@ h1 {
   display: none;
 }
 
+.navbar a:link {
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 24px;
+  color: white; /* former: slategray;*/
+  text-decoration: none;
+}
+
 .navbar a:hover {
   color: white;
 }
@@ -550,6 +570,8 @@ h1 {
 .bottom-navbar a:hover {
   color: white;
 }
+
+
 /*
 @media screen and (max-width: 781px) {
   .navbar a:not(:first-child) {display: none;}
