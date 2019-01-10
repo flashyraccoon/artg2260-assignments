@@ -3,7 +3,7 @@ html, * {box-sizing: border-box}
 
 
 body {
-  background-color: #0d0d0d;/* #e7fdf9; */
+  background-color: #0d0d0d;/* #e7fdf9; very dark gray*/
   margin: 0px;
   padding: 0px;
   overflow: auto;
@@ -25,7 +25,7 @@ body {
   background-color: #1a1a1a; /* very dark gray; former: white;*/
   margin-left: 12%;
   margin-right: 12%;
-  box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 250px 0 rgba(128, 229, 255, 1);
 }
 
 h2 {
@@ -41,7 +41,7 @@ h3 {
   font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-size: 24px;
-  color: black;
+  color: lightgray; /* former: black;*/
   padding: 0px 0px 15px 25px;
 }
 
@@ -52,8 +52,8 @@ p {
   font-style: normal;
   line-height: 1.5;
 
-  font-size: 18px;
-  color: white; /*former: black*/
+  font-size: 20px;
+  color: #e6e6e6; /*very light gray; former: black*/
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 40px;
@@ -120,7 +120,7 @@ img {
  	transition: .5s ease;
   font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   background-color: none;
-  color: darkslategray;
+  color: white;
   font-size: 28px;
   margin: 0px;
   padding: 0px;
@@ -248,7 +248,7 @@ a:link {
   font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-weight: lighter;
   font-size: 24px;
-  color: slategray;
+  color: white; /* former: slategray;*/
   text-decoration: none;
 }
 
@@ -257,7 +257,7 @@ a:visited {
   font-style: normal;
   font-weight: lighter;
   font-size: 24px;
-  color: slategray;
+  color: white;
   text-decoration: none;
 }
 
@@ -266,7 +266,7 @@ a:hover {
   font-style: normal;
   font-weight: lighter;
   font-size: 24px;
-  color: darkslategray;
+  color: white; /*former: darkslategray;*/
   text-decoration: none;
 
 }
@@ -276,7 +276,7 @@ a:active {
   font-style: normal;
   font-weight: lighter;
   font-size: 24px;
-  color: darkslategray;
+  color: white;/* darkslategray;*/
   text-decoration: underline;
 }
 
@@ -294,8 +294,8 @@ h1 {
     font-weight: normal;
     font-size: 80px;
     text-align: center;
-    color: darkslategray;
-    background-image: url(images/background_pale.gif);
+    color: white; /*darkslategray;*/
+    background-image: url(images/space_crop.png);/*url(images/background_pale.gif);*/
     background-repeat: no-repeat;
 
     background-size: cover;
@@ -311,24 +311,24 @@ h1 {
   input[type=submit] {
       font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
       font-size: 18px;
-      background-color: #C8FBF1;
-      color: slategray;
+      background-color: #64b0b5;
+      color: white;
       padding: 12px 20px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.2);
+      /*box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.2);*/
   }
 
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
-      background-color: #a0f8e5;
-      color: darkslategray;
+      background-color: #83c5c9;
+      color: white;
   }
 
   input[type=submit]:active {
-      background-color: #71f4d8;
-      color: darkslategray;
+      background-color: #fcd703;
+      color: white;
       box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
   }
 
@@ -409,19 +409,19 @@ h1 {
   text-decoration: none;
   margin: 5px 5px;
   border-radius: 5px;
-  background: #C8FBF1;
-  color: darkslategray;
+  background: #64b0b5; /*#C8FBF1;*/
+  color: white; /*darkslategray;*/
   box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.2);
 }
 
 .fa:hover {
   color: white;
-  background-color: #a0f8e5;
+  background-color: #83c5c9; /*#a0f8e5;*/
 }
 
 .fa:active {
   color: white;
-  background-color: #71f4d8;
+  background-color: #fcd703; /* yellow */
   box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.2);
 }
 
@@ -435,7 +435,7 @@ h1 {
 .navbar {
   position: absolute;
   display: inline-block;
-  background-color: #C8FBF1;
+  background-color: #00151a; /* very dark turquise; former: #C8FBF1;*/
   width: 100%;
   height: inherit;
   margin: 0px;
@@ -447,7 +447,7 @@ h1 {
 
 .navbtn {
   position: relative;
-  background-color: #C8FBF1; //color of the button
+  background-color: #00151a; /*color of the button; former: #C8FBF1;*/
   color: slategray;
   padding: 15px 40px;
   margin: 0px;
@@ -459,17 +459,21 @@ h1 {
 }
 
 .navbtn:hover {
-  background-color: #a0f8e5;
+  background-color: #002933; /* slightly less dark turquoise; former: #a0f8e5;*/
   color: darkslategray;
 }
 
 .navbtn:active {
-  background-color: #71f4d8;
+  background-color: #fcd703; /* yellow; former: #71f4d8;*/
   color: darkslategray;
 }
 
 .navbar .icon {
   display: none;
+}
+
+.navbar a:hover {
+  color: white;
 }
 
 
@@ -487,7 +491,7 @@ h1 {
 .bottom-navbar {
   position: relative;
   display: inline-block;
-  background-color: #C8FBF1;
+  background-color: #00151a; /*#C8FBF1;*/
   width: 100%;
   height: inherit;
   margin: 0px;
@@ -498,8 +502,8 @@ h1 {
 
 .bottom-navbtn {
   position: relative;
-  background-color: #C8FBF1; //color of the button
-  color: slategray;
+  background-color: #00151a;/*#C8FBF1; color of the button*/
+  color: white;
   padding: 15px 40px;
   margin: 0px;
 
@@ -510,13 +514,17 @@ h1 {
 }
 
 .bottom-navbtn:hover {
-  background-color: #a0f8e5;
-  color: darkslategray;
+  background-color: #002933;
+  color: #06463c; /*darkslategray;*/
 }
 
 .bottom-navbtn:active {
-  background-color: #71f4d8;
-  color: darkslategray;
+  background-color: #fddb1c; /*#003d4d; #71f4d8;*/
+  color: white;
+}
+
+.bottom-navbar a:hover {
+  color: white;
 }
 /*
 @media screen and (max-width: 781px) {
