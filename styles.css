@@ -292,6 +292,19 @@ a.textlink:active{
   color: #fcd703;
 }
 
+a.titlelink {
+  font-size: 28px;
+  color: #64b0b5;
+}
+
+a.titlelink:hover {
+  color: #83c5c9;
+}
+
+a.titlelink:active{
+  color: #fcd703;
+}
+
 .top-row-fixed {
     position: fixed;
     top: 0px;
@@ -692,5 +705,5 @@ h1 {
     margin: auto;
   }
 
-  
+
 }
