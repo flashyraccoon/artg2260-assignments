@@ -38,7 +38,7 @@ h2 {
 }
 
 h3 {
-  font-family: "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Advent Pro', "proxima-nova", "Cabin", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-size: 24px;
   color: lightgray; /* former: black;*/
@@ -322,6 +322,7 @@ h1 {
     color: white; /*darkslategray;*/
     background-image: url(images/space_crop.png);/*url(images/background_pale.gif);*/
     background-repeat: no-repeat;
+    /*text-shadow: 10, 10, #64b0b5;*/
 
     background-size: cover;
     border-style:none;
